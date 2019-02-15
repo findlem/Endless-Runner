@@ -22,7 +22,7 @@ public class DeleteItem : MonoBehaviour
     {
         if (refAABB.isDead)
         {
-            if(objectType == 1)
+            if(objectType == 1 && SceneController.PickAxeHit == false && SceneController.powerup1 == false)
             {
                 currentHealth -= 1f; //** TEMPORARY **; might need to be moved elsewhere
                 print("Collision! Max Health = " + maxHealth + "; Current Health = " + currentHealth);
@@ -30,6 +30,19 @@ public class DeleteItem : MonoBehaviour
                 SceneController.walls.Remove(gameObject);
                 Destroy(gameObject);
             }
+            if(objectType == 1 && SceneController.PickAxeHit == true)
+            {
+                SceneController.walls.Remove(gameObject);
+                Destroy(gameObject);
+                SceneController.PickAxeHit = false;
+            }
+            if (objectType == 1 && SceneController.powerup1 == true)
+            {
+                SceneController.walls.Remove(gameObject);
+                Destroy(gameObject);
+                
+            }
+
         }
     }
 }

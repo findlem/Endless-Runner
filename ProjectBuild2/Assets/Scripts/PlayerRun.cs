@@ -24,10 +24,12 @@ public class PlayerRun : MonoBehaviour
     //private bool isPaused = false;
 
     Rigidbody rb;
+    DeleteItem di;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        di = GetComponent<DeleteItem>();
     }
 
     // Update is called once per frame
@@ -53,7 +55,7 @@ public class PlayerRun : MonoBehaviour
             //currentHealth = 1; //** TEMPORARY **; used to help check the minimum speed the player can reach
             speed = speed - ((encumbrance / 3) + (((DeleteItem.currentHealth / DeleteItem.maxHealth) - 1) * -3)); //** NOTE **: the health side of this might need tweaking
             Vector3 pos = transform.position;
-            print("Speed = " + speed + "; Encumbrance = " + encumbrance + "; Current Health = " + DeleteItem.currentHealth); //prints all relevant variables
+            //print("Speed = " + speed + "; Encumbrance = " + encumbrance + "; Current Health = " + DeleteItem.currentHealth); //prints all relevant variables
             pos.z += speed * Time.deltaTime;
 
             //moving left and right
@@ -61,7 +63,7 @@ public class PlayerRun : MonoBehaviour
             bool right = Input.GetKeyDown("right");
             //Nathan's movement code
             //instances where player cannot move
-            if (left == true && currentLane == 1 && isChangingLanes == false)
+            /*if (left == true && currentLane == 1 && isChangingLanes == false)
             {
                 print("Can't move left!");
             }
@@ -72,7 +74,7 @@ public class PlayerRun : MonoBehaviour
             if (isChangingLanes == true && right == true || left == true)
             {
                 print("Already moving!");
-            }
+            }*/
             //if player can move
             if (left == true && currentLane == 3 && isChangingLanes == false)
             {
@@ -168,15 +170,15 @@ public class PlayerRun : MonoBehaviour
         }*/
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.tag == "wall")
-        {
-            print("ooch!");
-        }
+ 
         if(other.gameObject.tag == "rock")
         {
-            print("ooch!");
+            Destroy(other.gameObject);
+
+            DeleteItem.currentHealth -= 1f;
+            print("Speed = " + speed + "; Encumbrance = " + encumbrance + "; Current Health = " + DeleteItem.currentHealth);
         }
         
     }

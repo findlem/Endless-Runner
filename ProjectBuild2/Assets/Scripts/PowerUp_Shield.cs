@@ -22,12 +22,14 @@ public class PowerUp_Shield : MonoBehaviour
         if (Pickaxe_attack.PowerUp1 == false)
         {
             Dwarf_Shield.SetActive(false);
+            SceneController.powerup1 = false;
         }
 
         if (Pickaxe_attack.PowerUp1 == true)
         {
             PupTimer += 1;
             Dwarf_Shield.SetActive(true);
+            SceneController.powerup1 = true;
         }
 
         if(PupTimer >= 200)
@@ -35,6 +37,7 @@ public class PowerUp_Shield : MonoBehaviour
             Dwarf_Shield.SetActive(false);
             PupTimer = 0;
             Pickaxe_attack.PowerUp1 = false;
+            SceneController.powerup1 = false;
 
         }
         

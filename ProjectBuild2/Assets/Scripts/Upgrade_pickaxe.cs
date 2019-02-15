@@ -25,6 +25,7 @@ public class Upgrade_pickaxe : MonoBehaviour
             Upgrade_axe.z = 10f; // length of pickaxe would have to do the same for box below player(10f Exaggerated)
 
             transform.localScale = Upgrade_axe;
+            
         }
 
     }

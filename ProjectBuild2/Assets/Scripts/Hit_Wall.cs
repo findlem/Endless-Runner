@@ -21,13 +21,15 @@ public class Hit_Wall : MonoBehaviour
 
     }
 
-    /* Commented out because I fixed AABB collision with Varun's help ~ Nathan
-    private void OnTriggerEnter(Collider other)
+    // Now using to hit boulders and walls
+    private void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.tag == "wall")
+    
+
+        if (other.gameObject.tag == "rock")
         {
             Destroy(other.gameObject);
         }
     }
-    */
+    
 }

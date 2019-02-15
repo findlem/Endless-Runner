@@ -11,11 +11,17 @@ public class SceneController : MonoBehaviour
     List<GameObject> chunks = new List<GameObject>();
     static public List<GameObject> walls = new List<GameObject>();
     static public List<GameObject> rocks = new List<GameObject>();
+    static public bool PickAxeHit = false;
+    static public bool powerup1 = false;
 
 
 
 
     ColliderAABB pBox;
+
+    ColliderAABB pickBox;
+
+    ColliderAABB shieldBox;
 
 
     // Start is called before the first frame update
@@ -23,6 +29,10 @@ public class SceneController : MonoBehaviour
     {
 
         pBox = GameObject.Find("Player").GetComponent<ColliderAABB>();
+
+        pickBox = GameObject.Find("PickAxe").GetComponent<ColliderAABB>();
+
+        shieldBox = GameObject.Find("shield").GetComponent<ColliderAABB>();
 
     }
 
@@ -53,7 +63,8 @@ public class SceneController : MonoBehaviour
             chunks.Add(obj);
         }
 
-        if (walls.Count > 0)
+
+        if(walls.Count > 0)
         {
             foreach (GameObject wall in walls)
             {
@@ -67,7 +78,33 @@ public class SceneController : MonoBehaviour
 
                     }
                 }
+
+                if (pickBox.CheckOverlap(wall.GetComponent<ColliderAABB>()))
+                {
+                    //print("Collision!");
+                    if (wall != null)
+                    {
+                        //walls.Remove(wall);
+                        PickAxeHit = true;
+                        wall.GetComponent<ColliderAABB>().isDead = true;
+
+                    }
+                }
+                if (shieldBox.CheckOverlap(wall.GetComponent<ColliderAABB>()))
+                {
+                    //print("Collision!");
+                    if (wall != null)
+                    {
+                        //walls.Remove(wall);
+                        powerup1 = true;
+                        wall.GetComponent<ColliderAABB>().isDead = true;
+
+                    }
+                }
             }
         }
+
+
+
     }
 }
