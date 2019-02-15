@@ -39,35 +39,35 @@ public class SceneController : MonoBehaviour
             }
         }
 
-            while (chunks.Count < 5)
+        while (chunks.Count < 5)
+        {
+            // spawn a new chunk
+            Vector3 position = Vector3.zero;
+
+            if (chunks.Count > 0)
             {
-                // spawn a new chunk
-                Vector3 position = Vector3.zero;
-
-                if (chunks.Count > 0)
-                {
-                    position = chunks[chunks.Count - 1].transform.Find("Connector").position;
-                }
-
-                GameObject obj = Instantiate(prefabChunk, position, Quaternion.identity);
-                chunks.Add(obj);
+                position = chunks[chunks.Count - 1].transform.Find("Connector").position;
             }
 
-            /*if(walls.Count > 0)
-            {
+            GameObject obj = Instantiate(prefabChunk, position, Quaternion.identity);
+            chunks.Add(obj);
+        }
+
+        if (walls.Count > 0)
+        {
             foreach (GameObject wall in walls)
             {
-
                 if (pBox.CheckOverlap(wall.GetComponent<ColliderAABB>()))
                 {
-                    //print("collison");
-                }
+                    //print("Collision!");
+                    if (wall != null)
+                    {
+                        //walls.Remove(wall);
+                        wall.GetComponent<ColliderAABB>().isDead = true;
 
+                    }
+                }
             }
-            }
-            */
-        
-            
-        
+        }
     }
 }

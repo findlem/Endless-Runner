@@ -6,8 +6,8 @@ public class PlayerRun : MonoBehaviour
 {
     public float speed = 10; //default, non-slowed speed
     public float encumbrance = 0;
-    public float maxHealth = 3; //** TEMPORARY **; does not link with AABB collision yet
-    public float currentHealth = 3; //** TEMPORARY **; does not link with AABB collision yet
+    //public float maxHealth = 3; //** TEMPORARY **; does not link with AABB collision yet
+    //public float currentHealth = 3; //** TEMPORARY **; does not link with AABB collision yet
     //public float move_speed = 8;
 
     //bool switch1 = false;
@@ -50,10 +50,10 @@ public class PlayerRun : MonoBehaviour
             {
                 encumbrance = 10;
             }
-            currentHealth = 1; //** TEMPORARY **; used to help check the minimum speed the player can reach
-            speed = speed - ((encumbrance / 3) + (((currentHealth / maxHealth) - 1) * -3)); //** NOTE **: the health side of this might need tweaking
+            //currentHealth = 1; //** TEMPORARY **; used to help check the minimum speed the player can reach
+            speed = speed - ((encumbrance / 3) + (((DeleteItem.currentHealth / DeleteItem.maxHealth) - 1) * -3)); //** NOTE **: the health side of this might need tweaking
             Vector3 pos = transform.position;
-            print("Speed = " + speed + "; Encumbrance = " + encumbrance + "; Current Health = " + currentHealth); //prints all relevant variables
+            print("Speed = " + speed + "; Encumbrance = " + encumbrance + "; Current Health = " + DeleteItem.currentHealth); //prints all relevant variables
             pos.z += speed * Time.deltaTime;
 
             //moving left and right

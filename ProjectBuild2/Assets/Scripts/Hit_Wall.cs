@@ -21,6 +21,7 @@ public class Hit_Wall : MonoBehaviour
 
     }
 
+    /* Commented out because I fixed AABB collision with Varun's help ~ Nathan
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "wall")
@@ -28,4 +29,5 @@ public class Hit_Wall : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
+    */
 }

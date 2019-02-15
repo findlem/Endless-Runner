@@ -35,7 +35,8 @@ public class UI : MonoBehaviour
     void SetHealthText()
     {
         health.text = "Health";
-        healthBar.value = playerR.currentHealth;
+        //healthBar.value = playerR.currentHealth;
+        healthBar.value = DeleteItem.currentHealth;
 
     }
 

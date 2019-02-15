@@ -6,6 +6,7 @@ public class ColliderAABB : MonoBehaviour
 {
 
     public Vector3 halfSize;
+    public bool isDead = false;
 
     Vector3 min = Vector3.zero;
     Vector3 max = Vector3.zero;
