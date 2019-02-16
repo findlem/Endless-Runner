@@ -5,6 +5,7 @@ using UnityEngine;
 public class Chunk : MonoBehaviour
 {
     public GameObject prefabWall;
+    public GameObject prefabGold;
     
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,10 @@ public class Chunk : MonoBehaviour
         SpawnWallAt("Spawn1");
         SpawnWallAt("Spawn2");
         SpawnWallAt("Spawn3");
+
+        SpawnGoldAt("Spawn1Gold");
+        SpawnGoldAt("Spawn2Gold");
+        SpawnGoldAt("Spawn3Gold");
 
     }
 
@@ -29,7 +34,17 @@ public class Chunk : MonoBehaviour
         }
     }
 
-    
+    private void SpawnGoldAt(string name)
+    {
+        if (Random.Range(0, 200) < 70)
+        {
+            Vector3 position = transform.Find(name).position;
+            GameObject obj = Instantiate(prefabGold, position, Quaternion.identity);
+            SceneController.golds.Add(obj);
+        }
+    }
+
+
 
     private void OnTriggerEnter(Collider other) // AABB didnt work so I used this
     {
@@ -38,6 +53,7 @@ public class Chunk : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
+
 
     }
 

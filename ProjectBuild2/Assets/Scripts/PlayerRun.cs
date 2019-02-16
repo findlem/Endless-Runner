@@ -182,4 +182,13 @@ public class PlayerRun : MonoBehaviour
         }
         
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Gold")
+        {
+            Destroy(other.gameObject);
+            print("GET MONEY!!");
+        }
+    }
 }
