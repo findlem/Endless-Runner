@@ -36,7 +36,8 @@ public class Chunk : MonoBehaviour
 
     private void SpawnGoldAt(string name)
     {
-        if (Random.Range(0, 200) < 70)
+        //if (Random.Range(0, 200) < 70)
+        if (Random.Range(0, 200) < 125)
         {
             Vector3 position = transform.Find(name).position;
             GameObject obj = Instantiate(prefabGold, position, Quaternion.identity);
