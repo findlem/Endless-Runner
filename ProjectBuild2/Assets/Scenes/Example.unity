@@ -1099,6 +1099,7 @@ GameObject:
   - component: {fileID: 901828830}
   - component: {fileID: 901828832}
   - component: {fileID: 901828831}
+  - component: {fileID: 901828833}
   m_Layer: 0
   m_Name: PickAxe
   m_TagString: pick
@@ -1232,6 +1233,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   halfSize: {x: 0.15, y: 0.04995, z: 0.65}
   isDead: 0
+--- !u!114 &901828833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 901828824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 008dfe2333d5c6243b43ec54462f7827, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &932118855
 GameObject:
   m_ObjectHideFlags: 0
@@ -1692,6 +1705,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   encumbrance: 0
+  outOfGold: 0
 --- !u!114 &1706479610
 MonoBehaviour:
   m_ObjectHideFlags: 0
