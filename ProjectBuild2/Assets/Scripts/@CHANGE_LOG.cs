@@ -1,4 +1,4 @@
-﻿/*This will be used for any and all change listing since I don't /think/ gitHub does that for us?
+/*This will be used for any and all change listing since I don't /think/ gitHub does that for us?
  * 
  * 2/17/2019 - Nathan Michell
  * Changes made:
@@ -12,10 +12,9 @@
  *      - Add details regarding these new mechanics to the design document.
  *      - Known bug: When the dwarf stops moving forwards, they SLOWLY slide backwards.
  * 
- * [date] - [name]
+ * 2/19/2019 - Matthew Findley
  * Changes made:
- *      - [placeholder]
- *      - [placeholder]
+ *      - Added GameOver text when the player drops down to zero health.
  * 
  * [date] - [name]
  * Changes made:

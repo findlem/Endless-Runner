@@ -7,6 +7,7 @@ public class UI : MonoBehaviour
 {
     public Text health;
     public Text encumbrance;
+    public Text gameOver;
     public Slider healthBar;
     public Slider encumbranceBar;
     public Button pauseButton;
@@ -26,6 +27,7 @@ public class UI : MonoBehaviour
         timer++;
         SetHealthText();
         SetEncumbranceText();
+        GameOver();
         if (timer % 1000 == 0)
         {
             print("eat my oreos");
@@ -44,6 +46,18 @@ public class UI : MonoBehaviour
     {
         encumbrance.text = "Encumbrance";
         encumbranceBar.value = playerR.encumbrance;
+    }
+
+    void GameOver()
+    {
+        if(DeleteItem.currentHealth <= 0)
+        {
+            gameOver.text = "Game Over";
+        }
+        else
+        {
+            gameOver.text = "";
+        }
     }
 
      /*bool Timer(int max, int min, int start)
