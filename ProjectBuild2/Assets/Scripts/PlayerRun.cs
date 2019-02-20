@@ -193,7 +193,7 @@ public class PlayerRun : MonoBehaviour
         {
             Destroy(other.gameObject);
             encumbrance += 1f; //in general, gold piles will give double the gold a boulder will
-            print("GET MONEY!!");
+            //print("GET MONEY!!");
         }
     }
 }

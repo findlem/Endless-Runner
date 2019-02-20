@@ -10,6 +10,7 @@ public class SpawnBoulders : MonoBehaviour
     private bool TriggerSpawnVar = true;
     private int SpawnVar = 0;
     private int MercySpawn = 0;
+    public int Spawn_Rate = 650;
 
     // Start is called before the first frame update
     void Start()
@@ -30,35 +31,36 @@ public class SpawnBoulders : MonoBehaviour
         if (TriggerSpawnVar == true)
         {
 
-            SpawnVar = Random.Range(0, 200);
+            SpawnVar = Random.Range(0, Spawn_Rate);
         }
-        if(SpawnVar <= 75)
+        if(SpawnVar <= 100)
+        {
+            SpawnboulderAt("Bspawn1");
+            SpawnVar = Random.Range(0, Spawn_Rate);
+            
+        }
+        if(SpawnVar > 75 && SpawnVar  <= 155)
+        {
+            SpawnboulderAt("Bspawn2");
+            SpawnVar = Random.Range(0, Spawn_Rate);
+        }
+        if(SpawnVar > 155 && SpawnVar  <= 200)
+        {
+            SpawnboulderAt("Bspawn3");
+            SpawnVar = Random.Range(0, Spawn_Rate);
+        }
+        if(SpawnVar > 200)
         {
             MercySpawn += 1;
             if (MercySpawn >= 300)
             {
                 MercySpawn = 0;
-                SpawnVar = Random.Range(0, 200);
+                SpawnVar = Random.Range(0, Spawn_Rate);
             }
         }
-        if(SpawnVar > 75 && SpawnVar  <= 155)
-        {
-            SpawnboulderAt("Bspawn2");
-            SpawnVar = Random.Range(0, 200);
-        }
-        if(SpawnVar > 155 && SpawnVar  <= 180)
-        {
-            SpawnboulderAt("Bspawn3");
-            SpawnVar = Random.Range(0, 200);
-        }
-        if(SpawnVar > 180)
-        {
-            SpawnboulderAt("Bspawn1");
-            SpawnVar = Random.Range(0, 200);
-        }
 
 
-
+        //print(SpawnVar);
     }
 
     private void SpawnboulderAt(string name)
