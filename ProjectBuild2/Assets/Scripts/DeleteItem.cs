@@ -38,6 +38,17 @@ public class DeleteItem : MonoBehaviour
                 {
                     currentHealth -= 1f;
                     mercyInvincibility = 1.5f;
+
+                    if (currentHealth != 0f)
+                    {
+                        PlayerRun.sourceWoo.Play();
+                        print("smol woo");
+                    }
+                    if (currentHealth == 0f)
+                    {
+                        PlayerRun.sourceLongWoo.Play();
+                        print("BIG WOO");
+                    }
                 }
                 print("Collision! Max Health = " + maxHealth + "; Current Health = " + currentHealth);
 

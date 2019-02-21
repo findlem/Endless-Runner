@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class PlayerRun : MonoBehaviour
 {
+    public AudioClip clipWoo;
+    public AudioClip clipLongWoo;
+    //define the audio sources; need to be static for now so other scripts can reference them
+    public static AudioSource sourceWoo;
+    public static AudioSource sourceLongWoo;
+
     public float speed = 10; //default, non-slowed speed
     public float encumbrance = 0; //will default to 5 now; bag starts half full
     public bool outOfGold = false; //if this is ever ticked true, the dwarf will stop running and get burned
@@ -33,6 +39,26 @@ public class PlayerRun : MonoBehaviour
         encumbrance = 5; //defaults to half-full on game start
     }
 
+    public AudioSource AddAudio (AudioClip clip, bool loop, bool playAwake, float vol)
+    {
+        //assigns the appropriate AudioClip and properties to each new AudioSource
+        AudioSource newAudio = gameObject.AddComponent<AudioSource>();
+
+        newAudio.clip = clip;
+        newAudio.loop = loop;
+        newAudio.playOnAwake = playAwake;
+        newAudio.volume = vol;
+
+        return newAudio;
+    }
+
+    void Awake()
+    {
+        //adds the necessary AudioSources
+        sourceWoo = AddAudio(clipWoo, false, false, 0.9f);
+        sourceLongWoo = AddAudio(clipLongWoo, false, false, 0.9f);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -50,7 +76,11 @@ public class PlayerRun : MonoBehaviour
         if (encumbrance < 0 || DeleteItem.currentHealth == 0) //results in a gameover anyways, but best not keep dropping below 0
         {
             encumbrance = 0; //can throw this into another if statement; dwarf drops his gold when KO'd
-            outOfGold = true; //this will be used for our gameOver state; halts all forward movement for the rest of the run
+            if(outOfGold == false)
+            {
+                outOfGold = true; //this will be used for our gameOver state; halts all forward movement for the rest of the run
+                sourceLongWoo.Play();
+            }
         }
         speed = speed - ((encumbrance / 3) + (((DeleteItem.currentHealth / DeleteItem.maxHealth) - 1) * -3)); //** NOTE **: the health side of this might need tweaking
         Vector3 pos = transform.position;
@@ -181,6 +211,17 @@ public class PlayerRun : MonoBehaviour
             {
                 DeleteItem.currentHealth -= 1f;
                 DeleteItem.mercyInvincibility = 1.5f;
+
+                if (DeleteItem.currentHealth != 0f)
+                {
+                    sourceWoo.Play();
+                    print("smol woo");
+                }
+                if (DeleteItem.currentHealth == 0f)
+                {
+                    sourceLongWoo.Play();
+                    print("BIG WOO");
+                }
             }
             print("Speed = " + speed + "; Encumbrance = " + encumbrance + "; Current Health = " + DeleteItem.currentHealth);
         }
