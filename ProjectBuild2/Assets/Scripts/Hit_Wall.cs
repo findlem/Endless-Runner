@@ -29,6 +29,7 @@ public class Hit_Wall : MonoBehaviour
         if (other.gameObject.tag == "rock")
         {
             Destroy(other.gameObject);
+            PlayerRun.sourceBreakRock.Play();
         }
     }
     

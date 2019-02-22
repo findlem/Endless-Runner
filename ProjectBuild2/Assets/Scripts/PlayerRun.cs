@@ -6,9 +6,15 @@ public class PlayerRun : MonoBehaviour
 {
     public AudioClip clipWoo;
     public AudioClip clipLongWoo;
+    public AudioClip clipGoldPickUp;
+    public AudioClip clipBreakRock;
+    public AudioClip clipFootstep;
     //define the audio sources; need to be static for now so other scripts can reference them
     public static AudioSource sourceWoo;
     public static AudioSource sourceLongWoo;
+    public static AudioSource sourceGoldPickUp;
+    public static AudioSource sourceBreakRock;
+    public static AudioSource sourceFootstep;
 
     public float speed = 10; //default, non-slowed speed
     public float encumbrance = 0; //will default to 5 now; bag starts half full
@@ -37,6 +43,8 @@ public class PlayerRun : MonoBehaviour
         di = GetComponent<DeleteItem>();
 
         encumbrance = 5; //defaults to half-full on game start
+
+        sourceFootstep.Play(); //** TEMPORARY **; will need to move this somewhere else if/when we make a title screen
     }
 
     public AudioSource AddAudio (AudioClip clip, bool loop, bool playAwake, float vol)
@@ -57,6 +65,9 @@ public class PlayerRun : MonoBehaviour
         //adds the necessary AudioSources
         sourceWoo = AddAudio(clipWoo, false, false, 0.9f);
         sourceLongWoo = AddAudio(clipLongWoo, false, false, 0.9f);
+        sourceGoldPickUp = AddAudio(clipGoldPickUp, false, false, 0.9f);
+        sourceBreakRock = AddAudio(clipBreakRock, false, false, 0.9f);
+        sourceFootstep = AddAudio(clipFootstep, true, false, 0.9f);
     }
 
     // Update is called once per frame
@@ -66,7 +77,7 @@ public class PlayerRun : MonoBehaviour
 
         //NOTE: This gradually drains away your encumbrance; as in, you slowly lose gold!
         //had trouble letting other scripts change encumbrance, so now the rate of loss goes up as your health goes down
-        encumbrance -= (0.020f / (DeleteItem.currentHealth + 1)); //adds 1 so it doesn't try to divide by 0
+        encumbrance -= ((1 * Time.deltaTime) / (DeleteItem.currentHealth + 1)); //adds 1 so it doesn't try to divide by 0
 
         speed = 10; //reset speed first
         if (encumbrance >= 10)
@@ -80,6 +91,7 @@ public class PlayerRun : MonoBehaviour
             {
                 outOfGold = true; //this will be used for our gameOver state; halts all forward movement for the rest of the run
                 sourceLongWoo.Play();
+                sourceFootstep.Stop();
             }
         }
         speed = speed - ((encumbrance / 3) + (((DeleteItem.currentHealth / DeleteItem.maxHealth) - 1) * -3)); //** NOTE **: the health side of this might need tweaking
@@ -206,18 +218,19 @@ public class PlayerRun : MonoBehaviour
         if(other.gameObject.tag == "rock")
         {
             Destroy(other.gameObject);
+            sourceBreakRock.Play();
 
-            if(DeleteItem.currentHealth >= 1 && DeleteItem.mercyInvincibility <= 0)
+            if (DeleteItem.currentHealth >= 1 && DeleteItem.mercyInvincibility <= 0)
             {
                 DeleteItem.currentHealth -= 1f;
-                DeleteItem.mercyInvincibility = 1.5f;
+                DeleteItem.mercyInvincibility = 5f;
 
                 if (DeleteItem.currentHealth != 0f)
                 {
                     sourceWoo.Play();
                     print("smol woo");
                 }
-                if (DeleteItem.currentHealth == 0f)
+                if (DeleteItem.currentHealth <= 0f)
                 {
                     sourceLongWoo.Play();
                     print("BIG WOO");
@@ -234,7 +247,7 @@ public class PlayerRun : MonoBehaviour
         {
             Destroy(other.gameObject);
             encumbrance += 1f; //in general, gold piles will give double the gold a boulder will
-            //print("GET MONEY!!");
+            sourceGoldPickUp.Play();
         }
     }
 }

@@ -23,7 +23,7 @@ public class DeleteItem : MonoBehaviour
     {
         if (mercyInvincibility >= 0) //constantly ticked down mercyInvincibility, or otherwise sets to 0
         {
-            mercyInvincibility -= 0.0025f;
+            mercyInvincibility -= (0.5f * Time.deltaTime);
         }
         else
         {
@@ -37,14 +37,14 @@ public class DeleteItem : MonoBehaviour
                 if (currentHealth >= 1f && mercyInvincibility <= 0)
                 {
                     currentHealth -= 1f;
-                    mercyInvincibility = 1.5f;
+                    mercyInvincibility = 5f;
 
                     if (currentHealth != 0f)
                     {
                         PlayerRun.sourceWoo.Play();
                         print("smol woo");
                     }
-                    if (currentHealth == 0f)
+                    if (currentHealth <= 0f)
                     {
                         PlayerRun.sourceLongWoo.Play();
                         print("BIG WOO");
@@ -54,18 +54,20 @@ public class DeleteItem : MonoBehaviour
 
                 SceneController.walls.Remove(gameObject);
                 Destroy(gameObject);
+                PlayerRun.sourceBreakRock.Play();
             }
             if(objectType == 1 && SceneController.PickAxeHit == true)
             {
                 SceneController.walls.Remove(gameObject);
                 Destroy(gameObject);
+                PlayerRun.sourceBreakRock.Play();
                 SceneController.PickAxeHit = false;
             }
             if (objectType == 1 && SceneController.powerup1 == true)
             {
                 SceneController.walls.Remove(gameObject);
                 Destroy(gameObject);
-                
+                PlayerRun.sourceBreakRock.Play();
             }
 
         }

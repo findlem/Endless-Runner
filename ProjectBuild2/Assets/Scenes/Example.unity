@@ -1784,6 +1784,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clipWoo: {fileID: 8300000, guid: 237f2efa52ad9fa40bfd6f49e0cdd789, type: 3}
   clipLongWoo: {fileID: 8300000, guid: 4198d447cf34d6c4d95915168a7a081c, type: 3}
+  clipGoldPickUp: {fileID: 8300000, guid: cc5262c4dfdc3c849ae44b0de1c9991e, type: 3}
+  clipBreakRock: {fileID: 8300000, guid: e43d426d99701c74a89fcc93d59d340c, type: 3}
+  clipFootstep: {fileID: 8300000, guid: 2f690b46ed08cbb48a8d150e59ebc2f1, type: 3}
   speed: 10
   encumbrance: 0
   outOfGold: 0
