@@ -23,9 +23,10 @@ public class DeleteItem : MonoBehaviour
     {
         if (mercyInvincibility >= 0) //constantly ticked down mercyInvincibility, or otherwise sets to 0
         {
-            mercyInvincibility -= (0.5f * Time.deltaTime);
+            mercyInvincibility -= (0.20f * Time.deltaTime);
+            //print(mercyInvincibility);
         }
-        else
+        if (mercyInvincibility < 0)
         {
             mercyInvincibility = 0;
         }
@@ -37,7 +38,7 @@ public class DeleteItem : MonoBehaviour
                 if (currentHealth >= 1f && mercyInvincibility <= 0)
                 {
                     currentHealth -= 1f;
-                    mercyInvincibility = 5f;
+                    mercyInvincibility = 6f;
 
                     if (currentHealth != 0f)
                     {

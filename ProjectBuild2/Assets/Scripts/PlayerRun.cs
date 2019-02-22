@@ -223,7 +223,7 @@ public class PlayerRun : MonoBehaviour
             if (DeleteItem.currentHealth >= 1 && DeleteItem.mercyInvincibility <= 0)
             {
                 DeleteItem.currentHealth -= 1f;
-                DeleteItem.mercyInvincibility = 5f;
+                DeleteItem.mercyInvincibility = 6f;
 
                 if (DeleteItem.currentHealth != 0f)
                 {

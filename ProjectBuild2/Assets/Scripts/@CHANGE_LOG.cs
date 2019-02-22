@@ -16,21 +16,15 @@
  * Changes made:
  *      - Added GameOver text when the player drops down to zero health.
  * 
- * 
- * 
- * 
  * 2/19/19 - Eric Versaw
  * Changes made:
  *      - Made the boulders spawn less frequnetly and created a variable to change the Spawn_Rate through this variable for future use 
  * 
- * 
- * 
- * 
- * 
- * 
- * 
- * [date] - [name]
+ * 2/21/2019 - Nathan Michell
  * Changes made:
- *      - [placeholder]
- *      - [placeholder]
+ *      - Added loads of sound effects. Taking damage, getting knocked out/stopping, picking up gold, breaking walls/boulders, and running.
+ *      - Changed some variables to use deltaTime instead of very small floats.
+ *      - 
+ *      - 
+ *      - 
 */
