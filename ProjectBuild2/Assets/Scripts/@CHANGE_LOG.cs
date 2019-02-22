@@ -27,4 +27,7 @@
  *      - 
  *      - 
  *      - 
+ * 2/21/2019 - Eric Versaw
+ * Changes made:
+ *      - Added a cooldown to the pickaxe so you cannot spam it and live forever
 */

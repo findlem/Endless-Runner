@@ -10,9 +10,12 @@ public class Pickaxe_attack : MonoBehaviour
     public GameObject pivot_rotate;
     private int swing_time = 0;
     private int swing_back = 0;
+    private int cool_down = 50;
     private int add = 0;
+    private int add2 = 0;
     private float rotation_speed = 6;
     private bool wasSwung = false;
+    private bool triggerCoolDown = false;
 
     static public bool Active = false; // used to check for upgrades in other scripts
     static public bool PowerUp1 = false;
@@ -28,10 +31,15 @@ public class Pickaxe_attack : MonoBehaviour
     {
 
         bool click_active = Input.GetButtonDown("Jump");
-        if (click_active == true)
+        if (triggerCoolDown == false)
         {
-            add = 1;
-            wasSwung = true;
+            if (click_active == true)
+            {
+                add = 1;
+                wasSwung = true;
+                triggerCoolDown = true;
+                add2 = 1;
+            }
         }
 
         if(swing_time >= 15)
@@ -65,9 +73,17 @@ public class Pickaxe_attack : MonoBehaviour
             swing_back = 0;
 
         }
+        
+        if(cool_down <= 0)
+        {
+            triggerCoolDown = false;
+            add2 = 0;
+            cool_down = 50;
+        }
 
 
         swing_time += add;
+        cool_down -= add2;
 
         if (Input.GetKeyDown("p")) // Example used for upgrades for future reference
         {
