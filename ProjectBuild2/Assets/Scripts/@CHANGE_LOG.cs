@@ -30,4 +30,14 @@
  * 2/21/2019 - Eric Versaw
  * Changes made:
  *      - Added a cooldown to the pickaxe so you cannot spam it and live forever
+ *      
+ *      
+ *      
+ *2/23/19 - Eric Versaw
+ * Changes made:
+ *      - Changed the player to the dwarf
+ *      - Added his default walking animation and the dying animation when he dies
+ *      - A glitch was possible made and I could not find out why we might have to figure this out together in class next week
+ *      - It seems somtimes if you get hit by the walls it doesn't take one of your lives sometimes
+ *      -I don't know if I accidentally messed it up or if this glitch was already here
 */

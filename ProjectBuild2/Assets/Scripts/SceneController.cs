@@ -79,7 +79,7 @@ public class SceneController : MonoBehaviour
 
                     }
                 }
-
+                
                 if (pickBox.CheckOverlap(wall.GetComponent<ColliderAABB>()))
                 {
                     //print("Collision!");
