@@ -10,7 +10,7 @@ public class UI : MonoBehaviour
     public Text gameOver;
     public Slider healthBar;
     public Slider encumbranceBar;
-    public Button pauseButton;
+    public Image shop;
     private int timer = 0;
     // Start is called before the first frame update
     PlayerRun playerR = null;
@@ -50,7 +50,7 @@ public class UI : MonoBehaviour
 
     void GameOver()
     {
-        if(DeleteItem.currentHealth <= 0)
+        if(DeleteItem.currentHealth <= 0 || playerR.outOfGold)
         {
             gameOver.text = "Game Over";
         }
