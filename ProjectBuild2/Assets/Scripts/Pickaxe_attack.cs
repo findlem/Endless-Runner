@@ -7,6 +7,7 @@ public class Pickaxe_attack : MonoBehaviour
 {
 
     public GameObject pick_axe;
+    public GameObject visual_axe;
     public GameObject pivot_rotate;
     private int swing_time = 0;
     private int swing_back = 0;
@@ -51,11 +52,13 @@ public class Pickaxe_attack : MonoBehaviour
         if(swing_time <= 0)
         {
             pick_axe.SetActive(false);
-            
+            visual_axe.SetActive(false);
+
         }
         if(swing_time > 0)
         {
             pick_axe.SetActive(true);
+            visual_axe.SetActive(true);
         }
         if (add == 1 && wasSwung == true)
         {
