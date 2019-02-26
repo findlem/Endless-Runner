@@ -19,7 +19,7 @@ public class AnimationController : MonoBehaviour
     {
         bool isDead = false;
 
-        if (DeleteItem.currentHealth <= 0)
+        if (DeleteItem.currentHealth <= 0 || PlayerRun.outOfGold == true)
         {
             isDead = true;
             dAnimator.SetBool("Dead", isDead);

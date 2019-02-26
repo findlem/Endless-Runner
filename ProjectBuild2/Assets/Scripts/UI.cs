@@ -50,7 +50,7 @@ public class UI : MonoBehaviour
 
     void GameOver()
     {
-        if(DeleteItem.currentHealth <= 0 || playerR.outOfGold)
+        if(DeleteItem.currentHealth <= 0 || PlayerRun.outOfGold)
         {
             gameOver.text = "Game Over";
         }
