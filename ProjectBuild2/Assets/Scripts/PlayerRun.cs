@@ -211,6 +211,7 @@ public class PlayerRun : MonoBehaviour
         {
             speed = 0.5f;
         }*/
+        
     }
 
     private void OnCollisionEnter(Collision other)
@@ -237,6 +238,11 @@ public class PlayerRun : MonoBehaviour
                 }
             }
             print("Speed = " + speed + "; Encumbrance = " + encumbrance + "; Current Health = " + DeleteItem.currentHealth);
+        }
+
+        if(other.gameObject.tag == "lava")
+        {
+            DeleteItem.currentHealth = 0;
         }
         
     }

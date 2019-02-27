@@ -14,6 +14,7 @@ public class SceneController : MonoBehaviour
     static public List<GameObject> golds = new List<GameObject>();
     static public bool PickAxeHit = false;
     static public bool powerup1 = false;
+    static public bool lavawalls = false;
 
 
 
@@ -23,6 +24,8 @@ public class SceneController : MonoBehaviour
     ColliderAABB pickBox;
 
     ColliderAABB shieldBox;
+
+    
 
 
     // Start is called before the first frame update
@@ -34,6 +37,7 @@ public class SceneController : MonoBehaviour
         pickBox = GameObject.Find("PickAxe").GetComponent<ColliderAABB>();
 
         shieldBox = GameObject.Find("shield").GetComponent<ColliderAABB>();
+
 
     }
 
@@ -102,6 +106,8 @@ public class SceneController : MonoBehaviour
 
                     }
                 }
+
+
             }
         }
 
