@@ -25,6 +25,7 @@ public class PlayerRun : MonoBehaviour
     public float speed = 10; //default, non-slowed speed
     public float encumbrance = 0; //will default to 5 now; bag starts half full
     public static bool outOfGold = false; //if this is ever ticked true, the dwarf will stop running and get burned
+    public bool isInShop = false;
     //public float move_speed = 8;
 
     //bool switch1 = false;
@@ -223,6 +224,7 @@ public class PlayerRun : MonoBehaviour
         {
             speed = 0.5f;
         }*/
+        
     }
 
     private void OnCollisionEnter(Collision other)
@@ -249,6 +251,11 @@ public class PlayerRun : MonoBehaviour
                 }
             }
             print("Speed = " + speed + "; Encumbrance = " + encumbrance + "; Current Health = " + DeleteItem.currentHealth);
+        }
+
+        if(other.gameObject.tag == "lava")
+        {
+            DeleteItem.currentHealth = 0;
         }
         
     }

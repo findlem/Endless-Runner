@@ -34,7 +34,7 @@
  *
  * 2/23/2019 - Matthew Findley
  *      - Added game over screen when player runs out of gold and added image variable for shop in UI.
-=======
+ *      
  *      
  *      
  *      
@@ -46,4 +46,9 @@
  *      - It seems somtimes if you get hit by the walls it doesn't take one of your lives sometimes
  *      -I don't know if I accidentally messed it up or if this glitch was already here
 >>>>>>> 805fdf4616f22115c24d2855d7e9278ada5b66bb
+ *
+ *2/26/2019 - Matthew Findley
+ * Changes made:
+ *      - Added cave walls and roof
+ *      - Added new boulder obj
 */
