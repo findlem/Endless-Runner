@@ -1434,6 +1434,7 @@ MonoBehaviour:
   clipGoldPickUp: {fileID: 8300000, guid: cc5262c4dfdc3c849ae44b0de1c9991e, type: 3}
   clipBreakRock: {fileID: 8300000, guid: e43d426d99701c74a89fcc93d59d340c, type: 3}
   clipFootstep: {fileID: 8300000, guid: 2f690b46ed08cbb48a8d150e59ebc2f1, type: 3}
+  clipPickaxeSwing: {fileID: 8300000, guid: bd1013a83e8942c44a97acbfccc71c7f, type: 3}
   trackGameBGM: {fileID: 8300000, guid: 5970ce1fee979874cbf188fdf7d56479, type: 3}
   trackGameOver: {fileID: 8300000, guid: 5f63b2a4cb3e37d4fad4c48adfc69537, type: 3}
   speed: 10

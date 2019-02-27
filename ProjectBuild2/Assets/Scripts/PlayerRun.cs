@@ -9,6 +9,7 @@ public class PlayerRun : MonoBehaviour
     public AudioClip clipGoldPickUp;
     public AudioClip clipBreakRock;
     public AudioClip clipFootstep;
+    public AudioClip clipPickaxeSwing;
     public AudioClip trackGameBGM;
     public AudioClip trackGameOver;
     //define the audio sources; need to be static for now so other scripts can reference them
@@ -17,6 +18,7 @@ public class PlayerRun : MonoBehaviour
     public static AudioSource sourceGoldPickUp;
     public static AudioSource sourceBreakRock;
     public static AudioSource sourceFootstep;
+    public static AudioSource sourcePickaxeSwing;
     public static AudioSource sourceGameBGM;
     public static AudioSource sourceGameOver;
 
@@ -75,6 +77,7 @@ public class PlayerRun : MonoBehaviour
         sourceFootstep = AddAudio(clipFootstep, true, false, 0.9f);
         sourceGameBGM = AddAudio(trackGameBGM, true, false, 0.9f);
         sourceGameOver = AddAudio(trackGameOver, false, false, 0.9f);
+        sourcePickaxeSwing = AddAudio(clipPickaxeSwing, false, false, 0.9f);
     }
 
     // Update is called once per frame
@@ -232,7 +235,7 @@ public class PlayerRun : MonoBehaviour
             if (DeleteItem.currentHealth >= 1 && DeleteItem.mercyInvincibility <= 0)
             {
                 DeleteItem.currentHealth -= 1f;
-                DeleteItem.mercyInvincibility = 4f;
+                DeleteItem.mercyInvincibility = 5f;
 
                 if (DeleteItem.currentHealth != 0f)
                 {
