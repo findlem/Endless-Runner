@@ -23,7 +23,7 @@ public class Pickaxe_attack : MonoBehaviour
 
     void Start()
     {
-
+        PowerUp1 = true;
 
     }
 

@@ -21,7 +21,7 @@ public class Hit_Wall : MonoBehaviour
 
     }
 
-    // Now using to hit boulders and walls
+    // Now using to hit boulders
     private void OnCollisionEnter(Collision other)
     {
     

@@ -70,7 +70,6 @@ public class DeleteItem : MonoBehaviour
                 Destroy(gameObject);
                 PlayerRun.sourceBreakRock.Play();
             }
-            
 
         }
     }

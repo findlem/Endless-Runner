@@ -2,17 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LavaFlow : MonoBehaviour
+public class BoulderRoll : MonoBehaviour
 {
 
-
-    private float speed = 9;
-
+    
     // Start is called before the first frame update
     void Start()
     {
         
-
+        
     }
 
     // Update is called once per frame
@@ -20,30 +18,21 @@ public class LavaFlow : MonoBehaviour
     {
         Vector3 pos = transform.position;
 
-        pos.z += speed *Time.deltaTime;
+        pos.z -= 5 * Time.deltaTime;
 
         transform.position = pos;
 
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "rock")
-        {
-            Destroy(collision.gameObject);
-            
-
-        }
+        transform.Rotate(5f,0f,0f);
+        
 
     }
-
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Gold")
+        if (other.gameObject.tag == "wall")
         {
-            Destroy(other.gameObject);
-            
+            Destroy(gameObject);
+
         }
     }
 }

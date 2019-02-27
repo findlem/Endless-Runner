@@ -51,4 +51,12 @@
  * Changes made:
  *      - Added cave walls and roof
  *      - Added new boulder obj
+ *      
+ *      
+ *      
+ *2/26/2019 - Eric Versaw
+ *Changes made:
+ *      - Added the lava that chases the player. Causes game over if player touches it and the lava cleans up boulders and coins
+ *      - Also made the boulders roll towards the player and get destroyed by the wall
+ *      - Also had the sheild power up activate right in the beginning of the game to act as a start-up of invincibility
 */
