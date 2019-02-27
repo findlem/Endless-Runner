@@ -9,12 +9,16 @@ public class PlayerRun : MonoBehaviour
     public AudioClip clipGoldPickUp;
     public AudioClip clipBreakRock;
     public AudioClip clipFootstep;
+    public AudioClip trackGameBGM;
+    public AudioClip trackGameOver;
     //define the audio sources; need to be static for now so other scripts can reference them
     public static AudioSource sourceWoo;
     public static AudioSource sourceLongWoo;
     public static AudioSource sourceGoldPickUp;
     public static AudioSource sourceBreakRock;
     public static AudioSource sourceFootstep;
+    public static AudioSource sourceGameBGM;
+    public static AudioSource sourceGameOver;
 
     public float speed = 10; //default, non-slowed speed
     public float encumbrance = 0; //will default to 5 now; bag starts half full
@@ -45,6 +49,7 @@ public class PlayerRun : MonoBehaviour
 
         encumbrance = 5; //defaults to half-full on game start
 
+        sourceGameBGM.Play();
         sourceFootstep.Play(); //** TEMPORARY **; will need to move this somewhere else if/when we make a title screen
     }
 
@@ -69,6 +74,8 @@ public class PlayerRun : MonoBehaviour
         sourceGoldPickUp = AddAudio(clipGoldPickUp, false, false, 0.9f);
         sourceBreakRock = AddAudio(clipBreakRock, false, false, 0.9f);
         sourceFootstep = AddAudio(clipFootstep, true, false, 0.9f);
+        sourceGameBGM = AddAudio(trackGameBGM, true, false, 0.9f);
+        sourceGameOver = AddAudio(trackGameOver, false, false, 0.9f);
     }
 
     // Update is called once per frame
@@ -92,7 +99,9 @@ public class PlayerRun : MonoBehaviour
             {
                 outOfGold = true; //this will be used for our gameOver state; halts all forward movement for the rest of the run
                 sourceLongWoo.Play();
+                sourceGameOver.Play();
                 sourceFootstep.Stop();
+                sourceGameBGM.Stop();
             }
         }
         speed = speed - ((encumbrance / 3) + (((DeleteItem.currentHealth / DeleteItem.maxHealth) - 1) * -3)); //** NOTE **: the health side of this might need tweaking
@@ -224,7 +233,7 @@ public class PlayerRun : MonoBehaviour
             if (DeleteItem.currentHealth >= 1 && DeleteItem.mercyInvincibility <= 0)
             {
                 DeleteItem.currentHealth -= 1f;
-                DeleteItem.mercyInvincibility = 6f;
+                DeleteItem.mercyInvincibility = 4f;
 
                 if (DeleteItem.currentHealth != 0f)
                 {
