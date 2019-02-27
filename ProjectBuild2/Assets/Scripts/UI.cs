@@ -11,6 +11,7 @@ public class UI : MonoBehaviour
     public Slider healthBar;
     public Slider encumbranceBar;
     public Image shop;
+    
     private int timer = 0;
     // Start is called before the first frame update
     PlayerRun playerR = null;
@@ -31,6 +32,11 @@ public class UI : MonoBehaviour
         if (timer % 1000 == 0)
         {
             print("eat my oreos");
+        }
+
+        if (playerR.isInShop)
+        {
+            ShopUI();
         }
     }
 
@@ -58,6 +64,11 @@ public class UI : MonoBehaviour
         {
             gameOver.text = "";
         }
+    }
+
+    void ShopUI()
+    {
+        
     }
 
      /*bool Timer(int max, int min, int start)
