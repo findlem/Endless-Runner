@@ -39,6 +39,7 @@ public class Pickaxe_attack : MonoBehaviour
                 add = 1;
                 wasSwung = true;
                 triggerCoolDown = true;
+                PlayerRun.sourcePickaxeSwing.Play();
                 add2 = 1;
             }
         }
