@@ -38,7 +38,7 @@ public class DeleteItem : MonoBehaviour
                 if (currentHealth >= 1f && mercyInvincibility <= 0)
                 {
                     currentHealth -= 1f;
-                    mercyInvincibility = 6f;
+                    mercyInvincibility = 4f;
 
                     if (currentHealth != 0f)
                     {

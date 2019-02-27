@@ -1377,14 +1377,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: bf39294e5fbf9314281585172bbdf671, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 6dc10d2fe91416e488fad3a49c3aa4f6, type: 2}
     - target: {fileID: 9500000, guid: bf39294e5fbf9314281585172bbdf671, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 9db331a29e104314f9a1f0f6d21a2cc0, type: 2}
+    - target: {fileID: 13700000, guid: bf39294e5fbf9314281585172bbdf671, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6dc10d2fe91416e488fad3a49c3aa4f6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf39294e5fbf9314281585172bbdf671, type: 3}
 --- !u!1 &1023169887 stripped
@@ -1434,9 +1434,10 @@ MonoBehaviour:
   clipGoldPickUp: {fileID: 8300000, guid: cc5262c4dfdc3c849ae44b0de1c9991e, type: 3}
   clipBreakRock: {fileID: 8300000, guid: e43d426d99701c74a89fcc93d59d340c, type: 3}
   clipFootstep: {fileID: 8300000, guid: 2f690b46ed08cbb48a8d150e59ebc2f1, type: 3}
+  trackGameBGM: {fileID: 8300000, guid: 5970ce1fee979874cbf188fdf7d56479, type: 3}
+  trackGameOver: {fileID: 8300000, guid: 5f63b2a4cb3e37d4fad4c48adfc69537, type: 3}
   speed: 10
   encumbrance: 0
-  outOfGold: 0
 --- !u!114 &1023169891
 MonoBehaviour:
   m_ObjectHideFlags: 0
