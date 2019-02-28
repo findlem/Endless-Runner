@@ -6,12 +6,15 @@ public class Chunk : MonoBehaviour
 {
     public GameObject prefabWall;
     public GameObject prefabGold;
+    public GameObject prefabShop;
     
     // Start is called before the first frame update
     void Start()
     {
 
-        
+        SpawnShopAt("ShopSpawn1");
+        SpawnShopAt("ShopSpawn2");
+        SpawnShopAt("ShopSpawn3");
 
 
         SpawnWallAt("Spawn1");
@@ -31,6 +34,16 @@ public class Chunk : MonoBehaviour
             Vector3 position = transform.Find(name).position;
             GameObject obj = Instantiate(prefabWall, position, Quaternion.identity);
             SceneController.walls.Add(obj);
+        }
+    }
+
+    private void SpawnShopAt(string name)
+    {
+        if (Random.Range(0, 110) < 5)
+        {
+            Vector3 position = transform.Find(name).position;
+            GameObject obj = Instantiate(prefabShop, position, Quaternion.identity);
+            SceneController.shops.Add(obj);
         }
     }
 

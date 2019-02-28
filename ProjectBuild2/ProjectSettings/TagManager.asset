@@ -11,6 +11,7 @@ TagManager:
   - lanes
   - Gold
   - lava
+  - shop
   layers:
   - Default
   - TransparentFX

@@ -224,6 +224,12 @@ public class PlayerRun : MonoBehaviour
         {
             speed = 0.5f;
         }*/
+
+        if(isInShop)
+        {
+            speed = 0;
+            LavaFlow.speed = 0;
+        }
         
     }
 
@@ -267,6 +273,11 @@ public class PlayerRun : MonoBehaviour
             Destroy(other.gameObject);
             encumbrance += 1f; //in general, gold piles will give double the gold a boulder will
             sourceGoldPickUp.Play();
+        }
+
+        if (other.gameObject.tag == "shop")
+        {
+            isInShop = true;
         }
     }
 }
