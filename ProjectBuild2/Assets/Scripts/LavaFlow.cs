@@ -6,7 +6,7 @@ public class LavaFlow : MonoBehaviour
 {
 
 
-    private float speed = 9;
+    private float speed = 6;
 
     // Start is called before the first frame update
     void Start()
