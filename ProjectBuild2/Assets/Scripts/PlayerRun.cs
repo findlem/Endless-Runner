@@ -26,7 +26,9 @@ public class PlayerRun : MonoBehaviour
     public float encumbrance = 0; //will default to 5 now; bag starts half full
     public static bool outOfGold = false; //if this is ever ticked true, the dwarf will stop running and get burned
     public bool isInShop = false;
-    //public float move_speed = 8;
+
+    public static float score = 0f; //player earns points over time
+    private float scoreDelay = 0.5f; //delay between points earned
 
     //bool switch1 = false;
 
@@ -76,14 +78,26 @@ public class PlayerRun : MonoBehaviour
         sourceGoldPickUp = AddAudio(clipGoldPickUp, false, false, 0.9f);
         sourceBreakRock = AddAudio(clipBreakRock, false, false, 0.9f);
         sourceFootstep = AddAudio(clipFootstep, true, false, 0.9f);
-        sourceGameBGM = AddAudio(trackGameBGM, true, false, 0.9f);
-        sourceGameOver = AddAudio(trackGameOver, false, false, 0.9f);
+        sourceGameBGM = AddAudio(trackGameBGM, true, false, 1.0f);
+        sourceGameOver = AddAudio(trackGameOver, false, false, 0.5f);
         sourcePickaxeSwing = AddAudio(clipPickaxeSwing, false, false, 0.9f);
     }
 
     // Update is called once per frame
     void Update()
     {
+        //calculate score; also used to determine LavaFlow.cs speed
+        if(outOfGold == false && DeleteItem.currentHealth > 0)
+        {
+            scoreDelay -= 1f * Time.deltaTime;
+            if (scoreDelay <= 0f)
+            {
+                scoreDelay = 0.5f;
+                score += 1f;
+                print(score);
+            }
+        }
+
         //moving forwards
 
         //NOTE: This gradually drains away your encumbrance; as in, you slowly lose gold!

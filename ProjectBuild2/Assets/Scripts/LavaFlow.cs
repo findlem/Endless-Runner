@@ -6,7 +6,7 @@ public class LavaFlow : MonoBehaviour
 {
 
 
-    private float speed = 9;
+    private float speed = 6;
 
     // Start is called before the first frame update
     void Start()
@@ -18,10 +18,12 @@ public class LavaFlow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //first, calculate speed
+        speed = 6 + (PlayerRun.score / 100);
+
+        //now, apply speed to transform
         Vector3 pos = transform.position;
-
-        pos.z += speed *Time.deltaTime;
-
+        pos.z += speed * Time.deltaTime;
         transform.position = pos;
 
     }
