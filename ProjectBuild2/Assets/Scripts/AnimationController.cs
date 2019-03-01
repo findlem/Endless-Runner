@@ -6,6 +6,7 @@ public class AnimationController : MonoBehaviour
 {
 
     private Animator dAnimator;
+    private bool isShopping = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,17 @@ public class AnimationController : MonoBehaviour
             isDead = true;
             dAnimator.SetBool("Dead", isDead);
 
+        }
+
+        if (PlayerRun.isInShop == true)
+        {
+            isShopping = true;
+            dAnimator.SetBool("Shawp", isShopping);
+        }
+        if (PlayerRun.isInShop == false)
+        {
+            isShopping = false;
+            dAnimator.SetBool("Shawp", isShopping);
         }
 
 

@@ -2282,6 +2282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Dwarf_Shield: {fileID: 793031337}
+  PupTimer: 0
 --- !u!114 &1747958629
 MonoBehaviour:
   m_ObjectHideFlags: 0

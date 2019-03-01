@@ -29,6 +29,10 @@ public class SpawnBoulders : MonoBehaviour
         {
             Spawn_Rate = 0;
         }
+        if (PlayerRun.isInShop == false)
+        {
+            Spawn_Rate = 650;
+        }
 
 
         if (TriggerSpawnVar == true)

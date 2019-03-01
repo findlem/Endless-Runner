@@ -48,18 +48,15 @@ public class PlayerRun : MonoBehaviour
     //private bool isPaused = false;
     Rigidbody rb;
     DeleteItem di;
-    PowerUp_Shield ps;
     // Start is called before the first frame update
     void Start()
     {
         
         rb = GetComponent<Rigidbody>();
         di = GetComponent<DeleteItem>();
-        ps = GetComponent<PowerUp_Shield>();
 
         encumbrance = 5; //defaults to half-full on game start
         PowerUp1 = true;
-        ps.PupTimer = 200;
 
         sourceGameBGM.Play();
         sourceFootstep.Play(); //** TEMPORARY **; will need to move this somewhere else if/when we make a title screen
