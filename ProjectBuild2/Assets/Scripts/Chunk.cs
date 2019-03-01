@@ -6,13 +6,37 @@ public class Chunk : MonoBehaviour
 {
     public GameObject prefabWall;
     public GameObject prefabGold;
-    
+    //KeepCount ss;
+   
     // Start is called before the first frame update
     void Start()
     {
+        /* //Varun tried this, but it doesn't work
+        ss = GetComponent<KeepCount>();
+        ss.count += 1f;
 
-        
-
+        if (ss.count < 6f)
+        {
+            GameObject s1 = GameObject.Find("Spawn1");
+            Destroy(s1);
+            GameObject s2 = GameObject.Find("Spawn2");
+            Destroy(s2);
+            GameObject s3 = GameObject.Find("Spawn3");
+            Destroy(s3);
+            GameObject b1 = GameObject.Find("BSpawn1");
+            Destroy(b1);
+            GameObject b2 = GameObject.Find("BSpawn2");
+            Destroy(b2);
+            GameObject b3 = GameObject.Find("BSpawn3");
+            Destroy(b3);
+            GameObject g1 = GameObject.Find("SpawnGold1");
+            Destroy(g1);
+            GameObject g2 = GameObject.Find("SpawnGold2");
+            Destroy(g2);
+            GameObject g3 = GameObject.Find("SpawnGold3");
+            Destroy(g3);
+        }
+        */
 
         SpawnWallAt("Spawn1");
         SpawnWallAt("Spawn2");
