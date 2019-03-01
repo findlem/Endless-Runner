@@ -6,12 +6,12 @@ public class LavaFlow : MonoBehaviour
 {
 
 
-    private float speed = 6;
-
+    public float speed = 6;
+    PlayerRun playerR = null;
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerR = GetComponent<PlayerRun>();
 
     }
 
@@ -21,11 +21,20 @@ public class LavaFlow : MonoBehaviour
         //first, calculate speed
         speed = 6 + (PlayerRun.score / 100); //(also subtract stuff like speed upgrades from this)
 
+        /* //Had to comment out to temp. fix conflicts
+        if (!PlayerRun.isInShop)
+        {
+            speed = 6 + (PlayerRun.score / 100);
+        } else
+        {
+            speed = 0 - (PlayerRun.score / 100);
+        }
+        */
+
         //now, apply speed to transform
         Vector3 pos = transform.position;
         pos.z += speed * Time.deltaTime;
         transform.position = pos;
-
     }
 
     private void OnCollisionEnter(Collision collision)

@@ -12,6 +12,7 @@ public class SceneController : MonoBehaviour
     static public List<GameObject> walls = new List<GameObject>();
     static public List<GameObject> rocks = new List<GameObject>();
     static public List<GameObject> golds = new List<GameObject>();
+    static public List<GameObject> shops = new List<GameObject>();
     static public bool PickAxeHit = false;
     static public bool powerup1 = false;
     

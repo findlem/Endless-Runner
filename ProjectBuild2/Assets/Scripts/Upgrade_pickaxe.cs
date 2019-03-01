@@ -6,11 +6,11 @@ public class Upgrade_pickaxe : MonoBehaviour
 {
     public Vector3 Upgrade_axe;
 
-    Pickaxe_attack pa;
+    PlayerRun pr;
     // Start is called before the first frame update
     void Start()
     {
-        pa = GetComponent<Pickaxe_attack>();
+        pr = GetComponent<PlayerRun>();
 
         
     }
@@ -18,11 +18,11 @@ public class Upgrade_pickaxe : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Pickaxe_attack.Active == true)
+        if (PlayerRun.Active == true)
         {
             Upgrade_axe = transform.localScale;
 
-            Upgrade_axe.z = 10f; // length of pickaxe would have to do the same for box below player(10f Exaggerated)
+            Upgrade_axe.z = 5; // length of pickaxe would have to do the same for box below player(10f Exaggerated)
 
             transform.localScale = Upgrade_axe;
 
