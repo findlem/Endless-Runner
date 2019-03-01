@@ -38,6 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1520,7 +1521,6 @@ MonoBehaviour:
   trackGameOver: {fileID: 8300000, guid: 5f63b2a4cb3e37d4fad4c48adfc69537, type: 3}
   speed: 10
   encumbrance: 0
-  isInShop: 0
 --- !u!114 &1023169891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2049,6 +2049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f06fd58e22cb6f24f836d5238b11b4fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 6
 --- !u!65 &1353023822
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2380,7 +2381,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: "Press P to upgrade Pickaxe Length\n\nPress O to purchase Iron Skin Stout\r\n\nPress
+    U to upgrade Tailored Boots\n\nPress K to purchase Soap and Bandages\n\nPress
+    L to purchase High Roller's Rum"
 --- !u!222 &1767863591
 CanvasRenderer:
   m_ObjectHideFlags: 0

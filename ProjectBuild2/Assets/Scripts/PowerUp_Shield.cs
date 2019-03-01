@@ -7,7 +7,7 @@ public class PowerUp_Shield : MonoBehaviour
 
     PlayerRun pr;
     public GameObject Dwarf_Shield;
-    private float PupTimer = 0;
+    public float PupTimer = 0;
 
 
     // Start is called before the first frame update
@@ -32,7 +32,7 @@ public class PowerUp_Shield : MonoBehaviour
             SceneController.powerup1 = true;
         }
 
-        if(PupTimer >= 200)
+        if(PupTimer >= 400)
         {
             Dwarf_Shield.SetActive(false);
             PupTimer = 0;

@@ -62,5 +62,7 @@
  *      
  *2/28/19 - Eric Versaw
  * Changes made:
- *       - made the shop work with the shield and pickaxe but there are some UI bugs that I can't figure out
+ *       - Shop works pretty well
+ *       - Speed upgrade aka tailored boots has been added to the game
+ *       -Changed the brightness in the tunnel a little I was straining my eyes to play
 */

@@ -21,6 +21,8 @@ public class UI : MonoBehaviour
         playerR = GetComponent<PlayerRun>();
         SetHealthText();
         SetEncumbranceText();
+        upgradeButtons.enabled = false;
+        leaveShop.enabled = false;
     }
 
     // Update is called once per frame
@@ -35,10 +37,22 @@ public class UI : MonoBehaviour
             print("eat my oreos");
         }
 
-        if (PlayerRun.isInShop)
+        if (PlayerRun.isInShop == true)
         {
-            ShopUI();
+
+            upgradeButtons.enabled = true;
+            leaveShop.enabled = true;
+
         }
+        if(PlayerRun.isInShop == false)
+        {
+
+            upgradeButtons.enabled = false;
+            leaveShop.enabled = false;
+
+        }
+
+
     }
 
     void SetHealthText()
@@ -67,19 +81,7 @@ public class UI : MonoBehaviour
         }
     }
 
-    void ShopUI()
-    {
-        if (PlayerRun.isInShop == true)
-        {
-         
-            upgradeButtons.text = "Press P to upgrade Pickaxe Length\n\nPress O to purchase Iron Skin Stout" +
-                "\n\nPress U to upgrade Tailored Boots\n\nPress K to purchase Soap and Bandages\n\nPress L to purchase High Roller's Rum";
 
-        } else
-        {
-            upgradeButtons.text = "";
-        }
-    }
 
 
     /*bool Timer(int max, int min, int start)

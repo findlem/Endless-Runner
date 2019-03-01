@@ -28,6 +28,8 @@ public class PlayerRun : MonoBehaviour
     public static bool isInShop = false;
     public static bool Active = false; // used to check for upgrades in other scripts
     public static bool PowerUp1 = false;
+    public static bool PowerUp2 = false;
+    private int PUp2Timer = 0;
 
     public static float score = 0f; //player earns points over time
     private float scoreDelay = 0.5f; //delay between points earned
@@ -46,15 +48,18 @@ public class PlayerRun : MonoBehaviour
     //private bool isPaused = false;
     Rigidbody rb;
     DeleteItem di;
+    PowerUp_Shield ps;
     // Start is called before the first frame update
     void Start()
     {
         
         rb = GetComponent<Rigidbody>();
         di = GetComponent<DeleteItem>();
+        ps = GetComponent<PowerUp_Shield>();
 
         encumbrance = 5; //defaults to half-full on game start
         PowerUp1 = true;
+        ps.PupTimer = 200;
 
         sourceGameBGM.Play();
         sourceFootstep.Play(); //** TEMPORARY **; will need to move this somewhere else if/when we make a title screen
@@ -128,7 +133,25 @@ public class PlayerRun : MonoBehaviour
             {
                PowerUp1 = true;
             }
+
+            if (Input.GetKeyDown("u"))
+            {
+                PowerUp2 = true;
+            }
         }
+
+        if(PowerUp2 == true && !isInShop) // This Triggers The Speed Power Up 
+        {
+            PUp2Timer++;
+            speed = speed + 5;
+        }
+        if(PUp2Timer >= 200)
+        {
+            PowerUp2 = false;
+            PUp2Timer = 0;
+        }
+
+        
         if (encumbrance >= 10)
         {
             encumbrance = 10;
