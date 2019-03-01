@@ -59,4 +59,8 @@
  *      - Added the lava that chases the player. Causes game over if player touches it and the lava cleans up boulders and coins
  *      - Also made the boulders roll towards the player and get destroyed by the wall
  *      - Also had the sheild power up activate right in the beginning of the game to act as a start-up of invincibility
+ *      
+ *2/28/19 - Eric Versaw
+ * Changes made:
+ *       - made the shop work with the shield and pickaxe but there are some UI bugs that I can't figure out
 */
