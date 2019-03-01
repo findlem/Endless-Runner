@@ -19,13 +19,13 @@ public class PowerUp_Shield : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Pickaxe_attack.PowerUp1 == false)
+        if (pa.PowerUp1 == false)
         {
             Dwarf_Shield.SetActive(false);
             SceneController.powerup1 = false;
         }
 
-        if (Pickaxe_attack.PowerUp1 == true)
+        if (pa.PowerUp1 == true)
         {
             PupTimer += 1;
             Dwarf_Shield.SetActive(true);
@@ -36,7 +36,7 @@ public class PowerUp_Shield : MonoBehaviour
         {
             Dwarf_Shield.SetActive(false);
             PupTimer = 0;
-            Pickaxe_attack.PowerUp1 = false;
+            pa.PowerUp1 = false;
             SceneController.powerup1 = false;
 
         }

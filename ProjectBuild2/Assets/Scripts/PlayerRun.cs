@@ -25,7 +25,7 @@ public class PlayerRun : MonoBehaviour
     public float speed = 10; //default, non-slowed speed
     public float encumbrance = 0; //will default to 5 now; bag starts half full
     public static bool outOfGold = false; //if this is ever ticked true, the dwarf will stop running and get burned
-    public bool isInShop = false;
+    public static bool isInShop = false;
 
     public static float score = 0f; //player earns points over time
     private float scoreDelay = 0.5f; //delay between points earned
@@ -42,12 +42,13 @@ public class PlayerRun : MonoBehaviour
 
     //public float pause = 0;
     //private bool isPaused = false;
-
+    Pickaxe_attack pa;
     Rigidbody rb;
     DeleteItem di;
     // Start is called before the first frame update
     void Start()
     {
+        pa = GetComponent<Pickaxe_attack>();
         rb = GetComponent<Rigidbody>();
         di = GetComponent<DeleteItem>();
 
@@ -104,7 +105,28 @@ public class PlayerRun : MonoBehaviour
         //had trouble letting other scripts change encumbrance, so now the rate of loss goes up as your health goes down
         encumbrance -= ((1 * Time.deltaTime) / (DeleteItem.currentHealth + 1)); //adds 1 so it doesn't try to divide by 0
 
-        speed = 10; //reset speed first
+        if (!isInShop)
+        {
+            speed = 10; //reset speed first
+
+        } else
+        {
+            speed = 0 + ((encumbrance / 3) + (((DeleteItem.currentHealth / DeleteItem.maxHealth) - 1) * -3)); ;
+            if (Input.GetKeyDown("escape"))
+            {
+                isInShop = false;
+            }
+            encumbrance = 5;
+            if (Input.GetKeyDown("p")) // Example used for upgrades for future reference
+            {
+                pa.Active = true;
+            }
+
+            if (Input.GetKeyDown("o")) // Example used for powerups for future reference
+            {
+               pa.PowerUp1 = true;
+            }
+        }
         if (encumbrance >= 10)
         {
             encumbrance = 10;
@@ -239,11 +261,16 @@ public class PlayerRun : MonoBehaviour
             speed = 0.5f;
         }*/
 
-        if(isInShop)
+        /*if(isInShop)
         {
+            pSpeed = speed;
             speed = 0;
             LavaFlow.speed = 0;
-        }
+        } else
+        {
+
+            LavaFlow.speed = 6;
+        }*/
         
     }
 

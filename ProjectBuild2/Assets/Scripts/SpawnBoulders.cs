@@ -25,7 +25,10 @@ public class SpawnBoulders : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (PlayerRun.isInShop)
+        {
+            Spawn_Rate = 0;
+        }
 
 
         if (TriggerSpawnVar == true)
@@ -33,7 +36,7 @@ public class SpawnBoulders : MonoBehaviour
 
             SpawnVar = Random.Range(0, Spawn_Rate);
         }
-        if(SpawnVar <= 100)
+        if(SpawnVar <= 100 && SpawnVar > 0)
         {
             SpawnboulderAt("Bspawn1");
             SpawnVar = Random.Range(0, Spawn_Rate);

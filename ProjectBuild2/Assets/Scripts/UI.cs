@@ -10,7 +10,8 @@ public class UI : MonoBehaviour
     public Text gameOver;
     public Slider healthBar;
     public Slider encumbranceBar;
-    public Image shop;
+    public Text upgradeButtons;
+    public Text leaveShop;
     
     private int timer = 0;
     // Start is called before the first frame update
@@ -34,7 +35,7 @@ public class UI : MonoBehaviour
             print("eat my oreos");
         }
 
-        if (playerR.isInShop)
+        if (PlayerRun.isInShop)
         {
             ShopUI();
         }
@@ -68,7 +69,13 @@ public class UI : MonoBehaviour
 
     void ShopUI()
     {
-        
+        if (PlayerRun.isInShop)
+        {
+            upgradeButtons.text = "Press P to upgrade Pickaxe Length\n\nPress O to purchase Iron Skin Stout\n\nPress U to upgrade Tailored Boots\n\nPress K to purchase Soap and Bandages\n\nPress L to purchase High Roller's Rum";
+        } else
+        {
+            upgradeButtons.text = "";
+        }
     }
 
      /*bool Timer(int max, int min, int start)

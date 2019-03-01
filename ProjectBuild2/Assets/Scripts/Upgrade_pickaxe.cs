@@ -18,11 +18,11 @@ public class Upgrade_pickaxe : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Pickaxe_attack.Active == true)
+        if (pa.Active == true)
         {
             Upgrade_axe = transform.localScale;
 
-            Upgrade_axe.z = 10f; // length of pickaxe would have to do the same for box below player(10f Exaggerated)
+            Upgrade_axe.z++; // length of pickaxe would have to do the same for box below player(10f Exaggerated)
 
             transform.localScale = Upgrade_axe;
 

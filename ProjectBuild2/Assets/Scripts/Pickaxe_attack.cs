@@ -18,8 +18,8 @@ public class Pickaxe_attack : MonoBehaviour
     private bool wasSwung = false;
     private bool triggerCoolDown = false;
 
-    static public bool Active = false; // used to check for upgrades in other scripts
-    static public bool PowerUp1 = false;
+    public bool Active = false; // used to check for upgrades in other scripts
+    public bool PowerUp1 = false;
 
     void Start()
     {
@@ -89,15 +89,7 @@ public class Pickaxe_attack : MonoBehaviour
         swing_time += add;
         cool_down -= add2;
 
-        if (Input.GetKeyDown("p")) // Example used for upgrades for future reference
-        {
-            Active = true;
-        }
-
-        if (Input.GetKeyDown("o")) // Example used for powerups for future reference
-        {
-            PowerUp1 = true;
-        }
+        
 
 
     }
