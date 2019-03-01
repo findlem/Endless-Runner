@@ -69,7 +69,7 @@ public class UI : MonoBehaviour
 
     void ShopUI()
     {
-        if (PlayerRun.isInShop)
+        if (PlayerRun.isInShop == true)
         {
             
             upgradeButtons.text = "Press P to upgrade Pickaxe Length\n\nPress O to purchase Iron Skin Stout" +
