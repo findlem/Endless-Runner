@@ -8,7 +8,7 @@ public class Chunk : MonoBehaviour
     public GameObject prefabGold;
     //KeepCount ss;
    
-    //public GameObject prefabShop; //had to comment out to temp. fix conflict
+    public GameObject prefabShop; //had to comment out to temp. fix conflict
     
     // Start is called before the first frame update
     void Start()
@@ -40,9 +40,9 @@ public class Chunk : MonoBehaviour
         }
         */
 
-        //SpawnShopAt("ShopSpawn1"); //Had to comment out to temp. fix conflict
-        //SpawnShopAt("ShopSpawn2");
-        //SpawnShopAt("ShopSpawn3");
+        SpawnShopAt("ShopSpawn1"); //Had to comment out to temp. fix conflict
+        SpawnShopAt("ShopSpawn2");
+        SpawnShopAt("ShopSpawn3");
 
         SpawnWallAt("Spawn1");
         SpawnWallAt("Spawn2");
@@ -64,7 +64,7 @@ public class Chunk : MonoBehaviour
         }
     }
 
-    /* Had to comment out to temp. fix conflict
+    
     private void SpawnShopAt(string name)
     {
         if (Random.Range(0, 110) < 5)
@@ -74,7 +74,7 @@ public class Chunk : MonoBehaviour
             SceneController.shops.Add(obj);
         }
     }
-    */
+    
 
     private void SpawnGoldAt(string name)
     {
