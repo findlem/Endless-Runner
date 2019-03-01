@@ -19,6 +19,9 @@ public class LavaFlow : MonoBehaviour
     void Update()
     {
         //first, calculate speed
+        speed = 6 + (PlayerRun.score / 100); //(also subtract stuff like speed upgrades from this)
+
+        /* //Had to comment out to temp. fix conflicts
         if (!PlayerRun.isInShop)
         {
             speed = 6 + (PlayerRun.score / 100);
@@ -26,6 +29,7 @@ public class LavaFlow : MonoBehaviour
         {
             speed = 0 - (PlayerRun.score / 100);
         }
+        */
 
         //now, apply speed to transform
         Vector3 pos = transform.position;

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5232572636294533051}
   - component: {fileID: 5055918549469938781}
   - component: {fileID: 408717427120537570}
+  - component: {fileID: 7475749125895653893}
   m_Layer: 0
   m_Name: Gold
   m_TagString: Gold
@@ -122,3 +123,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea4010e423b6e49478aa2c5803bd9664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!108 &7475749125895653893
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5232572636294533048}
+  m_Enabled: 0
+  serializedVersion: 8
+  m_Type: 2
+  m_Color: {r: 1, g: 0.8489029, b: 0, a: 1}
+  m_Intensity: 0.5
+  m_Range: 1
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 0.5
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
