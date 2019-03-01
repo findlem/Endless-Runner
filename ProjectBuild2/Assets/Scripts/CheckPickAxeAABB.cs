@@ -5,22 +5,22 @@ using UnityEngine;
 public class CheckPickAxeAABB : MonoBehaviour
 {
     ColliderAABB cb;
-    Pickaxe_attack pa;
+    PlayerRun pr;
     // Start is called before the first frame update
     void Start()
     {
         cb = GetComponent<ColliderAABB>();
-        pa = GetComponent<Pickaxe_attack>();
+        pr = GetComponent<PlayerRun>();
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (pa.Active == true)
+        if (PlayerRun.Active == true)
         {
 
-            cb.halfSize.z += 0.5f;
+            cb.halfSize.z = 2.5f;
             
         }
 

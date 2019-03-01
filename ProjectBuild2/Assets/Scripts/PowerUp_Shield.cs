@@ -5,7 +5,7 @@ using UnityEngine;
 public class PowerUp_Shield : MonoBehaviour
 {
 
-    Pickaxe_attack pa;
+    PlayerRun pr;
     public GameObject Dwarf_Shield;
     private float PupTimer = 0;
 
@@ -13,19 +13,19 @@ public class PowerUp_Shield : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pa = GetComponent<Pickaxe_attack>();
+        pr = GetComponent<PlayerRun>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (pa.PowerUp1 == false)
+        if (PlayerRun.PowerUp1 == false)
         {
             Dwarf_Shield.SetActive(false);
             SceneController.powerup1 = false;
         }
 
-        if (pa.PowerUp1 == true)
+        if (PlayerRun.PowerUp1 == true)
         {
             PupTimer += 1;
             Dwarf_Shield.SetActive(true);
@@ -36,7 +36,7 @@ public class PowerUp_Shield : MonoBehaviour
         {
             Dwarf_Shield.SetActive(false);
             PupTimer = 0;
-            pa.PowerUp1 = false;
+            PlayerRun.PowerUp1 = false;
             SceneController.powerup1 = false;
 
         }

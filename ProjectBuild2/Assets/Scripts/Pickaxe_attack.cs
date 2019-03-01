@@ -18,12 +18,12 @@ public class Pickaxe_attack : MonoBehaviour
     private bool wasSwung = false;
     private bool triggerCoolDown = false;
 
-    public bool Active = false; // used to check for upgrades in other scripts
-    public bool PowerUp1 = false;
+    //static public bool Active = false; // used to check for upgrades in other scripts
+    //static public bool PowerUp1 = false;
 
     void Start()
     {
-        PowerUp1 = true;
+        
 
     }
 

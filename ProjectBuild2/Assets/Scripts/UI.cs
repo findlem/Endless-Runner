@@ -71,7 +71,10 @@ public class UI : MonoBehaviour
     {
         if (PlayerRun.isInShop)
         {
-            upgradeButtons.text = "Press P to upgrade Pickaxe Length\n\nPress O to purchase Iron Skin Stout\n\nPress U to upgrade Tailored Boots\n\nPress K to purchase Soap and Bandages\n\nPress L to purchase High Roller's Rum";
+            
+            upgradeButtons.text = "Press P to upgrade Pickaxe Length\n\nPress O to purchase Iron Skin Stout" +
+                "\n\nPress U to upgrade Tailored Boots\n\nPress K to purchase Soap and Bandages\n\nPress L to purchase High Roller's Rum";
+
         } else
         {
             upgradeButtons.text = "";

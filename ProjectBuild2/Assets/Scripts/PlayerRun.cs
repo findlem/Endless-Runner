@@ -26,6 +26,8 @@ public class PlayerRun : MonoBehaviour
     public float encumbrance = 0; //will default to 5 now; bag starts half full
     public static bool outOfGold = false; //if this is ever ticked true, the dwarf will stop running and get burned
     public static bool isInShop = false;
+    public static bool Active = false; // used to check for upgrades in other scripts
+    public static bool PowerUp1 = false;
 
     public static float score = 0f; //player earns points over time
     private float scoreDelay = 0.5f; //delay between points earned
@@ -42,17 +44,17 @@ public class PlayerRun : MonoBehaviour
 
     //public float pause = 0;
     //private bool isPaused = false;
-    Pickaxe_attack pa;
     Rigidbody rb;
     DeleteItem di;
     // Start is called before the first frame update
     void Start()
     {
-        pa = GetComponent<Pickaxe_attack>();
+        
         rb = GetComponent<Rigidbody>();
         di = GetComponent<DeleteItem>();
 
         encumbrance = 5; //defaults to half-full on game start
+        PowerUp1 = true;
 
         sourceGameBGM.Play();
         sourceFootstep.Play(); //** TEMPORARY **; will need to move this somewhere else if/when we make a title screen
@@ -119,12 +121,12 @@ public class PlayerRun : MonoBehaviour
             encumbrance = 5;
             if (Input.GetKeyDown("p")) // Example used for upgrades for future reference
             {
-                pa.Active = true;
+                Active = true;
             }
 
             if (Input.GetKeyDown("o")) // Example used for powerups for future reference
             {
-               pa.PowerUp1 = true;
+               PowerUp1 = true;
             }
         }
         if (encumbrance >= 10)
