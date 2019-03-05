@@ -29,7 +29,9 @@ public class PlayerRun : MonoBehaviour
     public static bool Active = false; // used to check for upgrades in other scripts
     public bool pickaxeBought = false;
     public static bool PowerUp1 = false;
+    public static bool PupActive = false;
     public static bool PowerUp2 = false;
+    public static bool PupActive2 = false;
     public static bool tailoredBoots = false;
     private int PUp2Timer = 0;
 
@@ -63,6 +65,7 @@ public class PlayerRun : MonoBehaviour
 
         sourceGameBGM.Play();
         sourceFootstep.Play(); //** TEMPORARY **; will need to move this somewhere else if/when we make a title screen
+        PupActive = true;
     }
 
     public AudioSource AddAudio (AudioClip clip, bool loop, bool playAwake, float vol)
@@ -117,6 +120,14 @@ public class PlayerRun : MonoBehaviour
         {
             speed = 10; //reset speed first
             encumbrance -= ((1 * Time.deltaTime) / (DeleteItem.currentHealth + 1)); //adds 1 so it doesn't try to divide by 0
+            if (Input.GetKeyDown("o") && PupActive == true) // Example used for powerups for future reference
+            {
+                PowerUp1 = true;
+            }
+            if (Input.GetKeyDown("u") && PupActive2 == true)
+            {
+                PowerUp2 = true;
+            }
 
         } else
         {
@@ -132,16 +143,18 @@ public class PlayerRun : MonoBehaviour
                 encumbrance = encumbrance - 6;
                 pickaxeBought = true;
             }
-
-            if (Input.GetKeyDown("o") && encumbrance >= 4) // Example used for powerups for future reference
+            
+            if (Input.GetKeyDown("o") && encumbrance >= 4 && PupActive == false) // Example used for powerups for future reference
             {
-               PowerUp1 = true;
+               
                encumbrance = encumbrance - 4;
+                PupActive = true;
+               
             }
 
-            if (Input.GetKeyDown("u") && encumbrance >= 4)
+            if (Input.GetKeyDown("u") && encumbrance >= 4 && PupActive2 == false)
             {
-                PowerUp2 = true;
+                PupActive2 = true;
                 encumbrance = encumbrance - 4;
             }
             if (Input.GetKeyDown("k") && encumbrance >= 2 && DeleteItem.currentHealth < 3)
@@ -171,6 +184,7 @@ public class PlayerRun : MonoBehaviour
         {
             PowerUp2 = false;
             PUp2Timer = 0;
+            PupActive2 = false;
         }
 
         

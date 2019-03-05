@@ -34,5 +34,12 @@ public class BoulderRoll : MonoBehaviour
             Destroy(gameObject);
 
         }
+        if (other.gameObject.tag == "shop")
+        {
+            Destroy(gameObject);
+
+        }
+
     }
+
 }

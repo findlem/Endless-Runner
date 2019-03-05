@@ -25,7 +25,7 @@ public class PowerUp_Shield : MonoBehaviour
             SceneController.powerup1 = false;
         }
 
-        if (PlayerRun.PowerUp1 == true && PlayerRun.isInShop == false)
+        if (PlayerRun.PowerUp1 == true && PlayerRun.isInShop == false && PlayerRun.PupActive == true)
         {
             PupTimer += 1;
             Dwarf_Shield.SetActive(true);
@@ -38,6 +38,7 @@ public class PowerUp_Shield : MonoBehaviour
             PupTimer = 0;
             PlayerRun.PowerUp1 = false;
             SceneController.powerup1 = false;
+            PlayerRun.PupActive = false;
 
         }
         
