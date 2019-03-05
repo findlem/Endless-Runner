@@ -29,8 +29,16 @@ public class AnimationController : MonoBehaviour
 
         if (PlayerRun.isInShop == true)
         {
-            isShopping = true;
-            dAnimator.SetBool("Shawp", isShopping);
+            if (PlayerRun.outOfGold || DeleteItem.currentHealth <= 0)
+            {
+                isDead = true;
+                dAnimator.SetBool("Dead", isDead);
+            }
+            else
+            {
+                isShopping = true;
+                dAnimator.SetBool("Shawp", isShopping);
+            }
         }
         if (PlayerRun.isInShop == false)
         {
