@@ -365,7 +365,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 580.5, y: 193.2}
+  m_AnchoredPosition: {x: 565.41, y: 193.2}
   m_SizeDelta: {x: 389.1, y: 111.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &210116810
@@ -1970,7 +1970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8679974, g: 0.5801887, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.88235295, b: 0.627451, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2545,7 +2545,6 @@ MonoBehaviour:
   iSDesc: {fileID: 1548864037}
   sBDesc: {fileID: 433265671}
   tBDesc: {fileID: 1143912089}
-  tBNumba: {fileID: 0}
   pickaxeUp: {fileID: 1777908200}
   pickaxeUpShop: {fileID: 443767960}
   ironSkin: {fileID: 745793998}
@@ -2790,7 +2789,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8666667, g: 0.5803922, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.88235295, b: 0.627451, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2871,7 +2870,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8666667, g: 0.5803922, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.88235295, b: 0.627451, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2950,7 +2949,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8666667, g: 0.5803922, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.88235295, b: 0.627451, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3442,8 +3441,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1353023820}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.2, z: -80.5}
-  m_LocalScale: {x: 5, y: 1, z: 154.27}
+  m_LocalPosition: {x: 0, y: 1.2, z: -23}
+  m_LocalScale: {x: 5, y: 1, z: 37.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -3485,8 +3484,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 0.49217367, b: 0, a: 1}
-  m_Intensity: 151.5
-  m_Range: 86.67
+  m_Intensity: 17.5
+  m_Range: 50
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -3507,7 +3506,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 152.1
+  m_BounceIntensity: 17.5
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -3950,7 +3949,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1853683700}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -690.5, y: -257.4, z: 0}
+  m_LocalPosition: {x: -690.5, y: -268, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 423131620}
@@ -4169,7 +4168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8666667, g: 0.5803922, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.88235295, b: 0.627451, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
