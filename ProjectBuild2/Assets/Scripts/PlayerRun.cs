@@ -32,7 +32,7 @@ public class PlayerRun : MonoBehaviour
     public static bool PupActive = false;
     public static bool PowerUp2 = false;
     public static bool PupActive2 = false;
-    public static int numberOfTailoredBoots = 0;
+    public static float numberOfTailoredBoots = 0f;
     public static bool highRollersRum = false;
     public static bool highRollersRumActive = false;
     public static int highRollerTimer = 0;
@@ -154,18 +154,18 @@ public class PlayerRun : MonoBehaviour
                 pickaxeBought = true;
             }
             
-            if (Input.GetKeyDown("o") && encumbrance >= 4 && PupActive == false) // Example used for powerups for future reference
+            if (Input.GetKeyDown("o") && encumbrance >= 3 && PupActive == false) // Example used for powerups for future reference
             {
                
-               encumbrance = encumbrance - 4;
+               encumbrance = encumbrance - 3;
                 PupActive = true;
                
             }
 
-            if (Input.GetKeyDown("u") && encumbrance >= 4 && PupActive2 == false)
+            if (Input.GetKeyDown("u") && encumbrance >= 3 && PupActive2 == false)
             {
                 PupActive2 = true;
-                encumbrance = encumbrance - 4;
+                encumbrance = encumbrance - 3;
             }
             if (Input.GetKeyDown("k") && encumbrance >= 2 && DeleteItem.currentHealth < 3)
             {
@@ -180,7 +180,7 @@ public class PlayerRun : MonoBehaviour
             if (Input.GetKeyDown("j") && encumbrance >= 4)
             {
             
-                numberOfTailoredBoots += 1;
+                numberOfTailoredBoots += 1f;
                 encumbrance = encumbrance - 4;
 
             }

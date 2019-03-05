@@ -169,7 +169,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: f4ee050264c349048aa71fee5279412f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 090c5ac04ef37a0429b890a09047bb3b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -244,7 +244,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: f8cc42e42844eac4bbf84b6216ac9dcf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 287479bb1f3757447969872c21817bcf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -516,7 +516,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 100, y: 257.9}
+  m_AnchoredPosition: {x: 100, y: 243.7}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &381594489
@@ -539,7 +539,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: f4ee050264c349048aa71fee5279412f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 090c5ac04ef37a0429b890a09047bb3b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -614,7 +614,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 8fadd3932b856c740882079cd04c9498, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0410d412ef261fd47b2324dd8fc1e478, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -665,8 +665,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 154.2, y: -4.3}
-  m_SizeDelta: {x: 210, y: 84.2}
+  m_AnchoredPosition: {x: 197, y: -1.9}
+  m_SizeDelta: {x: 290.3, y: 84.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &433265671
 MonoBehaviour:
@@ -701,7 +701,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: -= Soap & Bandages =-
+  m_Text: '-= Soap & Bandages - Cost: 20% =-
+
+    Cleans Urist''s cuts and bruises, restoring his health to full!'
 --- !u!222 &433265672
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -745,7 +747,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 100, y: 356.1}
+  m_AnchoredPosition: {x: 100, y: 345.5}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &443767960
@@ -768,7 +770,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 5710b69c8bf4f3143832944af6209eaf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 45b3aba3db9cb2c4a890bed3a28de770, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1135,7 +1137,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 486a53b530c760441aa69350b4e43f6d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cd2d0d1598411d848b9cb5073a30d136, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1574,7 +1576,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 486a53b530c760441aa69350b4e43f6d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cd2d0d1598411d848b9cb5073a30d136, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2031,8 +2033,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 163.8, y: 2.2}
-  m_SizeDelta: {x: 210, y: 84.2}
+  m_AnchoredPosition: {x: 188.5, y: -1}
+  m_SizeDelta: {x: 276.8, y: 84.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &928455360
 MonoBehaviour:
@@ -2067,7 +2069,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '-= Lengthened Haft =-
+  m_Text: '-= Lengthened Haft - Cost: 60% =-
 
     Upgrades the length of your pickaxe so you can hit things further away!'
 --- !u!222 &928455361
@@ -2404,7 +2406,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 471f948ed1047434a9a535415e9c8ec2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e364db0c3a5bf6041835e4838d5dc25b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2543,6 +2545,7 @@ MonoBehaviour:
   iSDesc: {fileID: 1548864037}
   sBDesc: {fileID: 433265671}
   tBDesc: {fileID: 1143912089}
+  tBNumba: {fileID: 0}
   pickaxeUp: {fileID: 1777908200}
   pickaxeUpShop: {fileID: 443767960}
   ironSkin: {fileID: 745793998}
@@ -3107,7 +3110,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: f8cc42e42844eac4bbf84b6216ac9dcf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f833fe29ec868f34f96ea8204dc813ac, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3259,8 +3262,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 157, y: -5.2}
-  m_SizeDelta: {x: 210, y: 84.2}
+  m_AnchoredPosition: {x: 181.1, y: -0.25}
+  m_SizeDelta: {x: 258.41, y: 84.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1143912089
 MonoBehaviour:
@@ -3295,7 +3298,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: -= Tailored Boots =-
+  m_Text: '-= Tailored Boots - Cost: 40% =-
+
+    Every purchase of these repairs makes it easier to outpace the lava flow!'
 --- !u!222 &1143912090
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3577,8 +3582,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 157.1, y: -0.1}
-  m_SizeDelta: {x: 210, y: 84.2}
+  m_AnchoredPosition: {x: 180.9, y: 1.5}
+  m_SizeDelta: {x: 255.1, y: 84.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1548864037
 MonoBehaviour:
@@ -3613,7 +3618,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: -= Ironskin Stout =-
+  m_Text: '-= Ironskin Stout - Cost: 30% =-
+
+    Projects a dwarven shield in front of Urist, blocking all frontal obstacles!'
 --- !u!222 &1548864038
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3656,8 +3663,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 157.3, y: 1.8}
-  m_SizeDelta: {x: 210, y: 84.2}
+  m_AnchoredPosition: {x: 196.4, y: 1.8}
+  m_SizeDelta: {x: 288, y: 84.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1723434154
 MonoBehaviour:
@@ -3692,7 +3699,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '-= High Roller''s Rum =-
+  m_Text: '-= High Roller''s Rum - Cost: 30% =-
 
     Increases the size of your pockets so you can hold more gold!'
 --- !u!222 &1723434155
@@ -3737,8 +3744,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 156.5, y: -0.16}
-  m_SizeDelta: {x: 210, y: 84.2}
+  m_AnchoredPosition: {x: 177.1, y: -0.16}
+  m_SizeDelta: {x: 252.7, y: 84.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1747377874
 MonoBehaviour:
@@ -3773,7 +3780,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '-= Wine of Wind =-
+  m_Text: '-= Wine of Wind - Cost: 30% =-
 
     Gives you a crazy boost of speed, but watch out for obstacles!'
 --- !u!222 &1747377875
@@ -3902,7 +3909,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 5710b69c8bf4f3143832944af6209eaf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f36904d932648a244afbc2b6baf8ce02, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4314,7 +4321,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 100, y: 157}
+  m_AnchoredPosition: {x: 100, y: 146}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1934904326
@@ -4337,7 +4344,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 471f948ed1047434a9a535415e9c8ec2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e364db0c3a5bf6041835e4838d5dc25b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
