@@ -177,14 +177,14 @@ public class UI : MonoBehaviour
             highRollers.enabled = false;
         }
 
-        if (PlayerRun.tailoredBoots)
+        /*if (PlayerRun.tailoredBoots)
         {
             tailoredBoots.enabled = true;
         }
         if (!PlayerRun.tailoredBoots)
         {
             tailoredBoots.enabled = false;
-        }
+        }*/
     }
 
 
