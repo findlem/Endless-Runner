@@ -67,7 +67,7 @@ public class Chunk : MonoBehaviour
     
     private void SpawnShopAt(string name)
     {
-        if (Random.Range(0, 120) < 100 && PlayerRun.shopScore >= 1)
+        if (Random.Range(0, 120) < 5 && PlayerRun.shopScore >= 30)
         {
             Vector3 position = transform.Find(name).position;
             GameObject obj = Instantiate(prefabShop, position, Quaternion.identity);
