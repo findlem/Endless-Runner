@@ -32,7 +32,7 @@ public class PlayerRun : MonoBehaviour
     public static bool PupActive = false;
     public static bool PowerUp2 = false;
     public static bool PupActive2 = false;
-    public static bool tailoredBoots = false;
+    public static int numberOfTailoredBoots = 0;
     public static bool highRollersRum = false;
     public static bool highRollersRumActive = false;
     public static int highRollerTimer = 0;
@@ -101,6 +101,7 @@ public class PlayerRun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         //calculate score; also used to determine LavaFlow.cs speed
         if(outOfGold == false && DeleteItem.currentHealth > 0 && isInShop == false)
         {
@@ -178,7 +179,8 @@ public class PlayerRun : MonoBehaviour
             }
             if (Input.GetKeyDown("j") && encumbrance >= 4)
             {
-                tailoredBoots = true;
+            
+                numberOfTailoredBoots += 1;
                 encumbrance = encumbrance - 4;
 
             }
@@ -206,6 +208,7 @@ public class PlayerRun : MonoBehaviour
             highRollerTimer = 0;
             highRollersRum = false;
             highRollersRumActive = false;
+            
         }
 
 
@@ -214,6 +217,11 @@ public class PlayerRun : MonoBehaviour
         {
             encumbrance = maxGold;
         }
+        if(highRollersRum == false)
+        {
+            maxGold = 10;
+        }
+
         if (encumbrance < 0 || DeleteItem.currentHealth == 0) //results in a gameover anyways, but best not keep dropping below 0
         {
             encumbrance = 0; //can throw this into another if statement; dwarf drops his gold when KO'd
@@ -354,7 +362,7 @@ public class PlayerRun : MonoBehaviour
 
             LavaFlow.speed = 6;
         }*/
-        
+        print(numberOfTailoredBoots);
     }
 
     private void OnCollisionEnter(Collision other)
