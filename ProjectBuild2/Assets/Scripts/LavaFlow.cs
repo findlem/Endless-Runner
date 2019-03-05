@@ -19,12 +19,12 @@ public class LavaFlow : MonoBehaviour
     void Update()
     {
         //first, calculate speed
-        speed = 6 + (PlayerRun.score / 100); //(also subtract stuff like speed upgrades from this)
-
+        //speed = 6 + (PlayerRun.score / 100); //(also subtract stuff like speed upgrades from this)
         
         if (!PlayerRun.isInShop)
         {
-            speed = 6 + (PlayerRun.score / 100);
+            //speed = 6 + (PlayerRun.score / 100);
+            speed = 6 + (PlayerRun.score / 100) - (PlayerRun.numberOfTailoredBoots / 10);
         } else
         {
             speed = 0;
@@ -35,6 +35,8 @@ public class LavaFlow : MonoBehaviour
         Vector3 pos = transform.position;
         pos.z += speed * Time.deltaTime;
         transform.position = pos;
+
+        
     }
 
     private void OnCollisionEnter(Collision collision)
