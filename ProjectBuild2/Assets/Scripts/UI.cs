@@ -13,10 +13,15 @@ public class UI : MonoBehaviour
     public Slider encumbranceBar;
     public Text upgradeButtons;
     public Text leaveShop;
-    public Text upgradeButtons_shadow;
     public Text leaveShop_shadow;
     public Text score;
     public Text scoreShadow;
+    public Text pADesc;
+    public Text wWDesc;
+    public Text hRDesc;
+    public Text iSDesc;
+    public Text sBDesc;
+    public Text tBDesc;
     public Image pickaxeUp;
     public Image pickaxeUpShop;
     public Image ironSkin;
@@ -38,10 +43,6 @@ public class UI : MonoBehaviour
         playerR = GetComponent<PlayerRun>();
         SetHealthText();
         SetEncumbranceText();
-        upgradeButtons.enabled = false;
-        leaveShop.enabled = false;
-        upgradeButtons_shadow.enabled = false;
-        leaveShop_shadow.enabled = false;
     }
 
     // Update is called once per frame
@@ -58,15 +59,19 @@ public class UI : MonoBehaviour
 
         if (PlayerRun.isInShop == true)
         {
+            pADesc.enabled = true;
+            wWDesc.enabled = true;
+            hRDesc.enabled = true;
+            iSDesc.enabled = true;
+            sBDesc.enabled = true;
+            tBDesc.enabled = true;
             pickaxeUpShop.enabled = true;
             ironSkinShop.enabled = true;
             wineWindShop.enabled = true;
             highRollersShop.enabled = true;
             tailoredBootsShop.enabled = true;
             soapBandagesShop.enabled = true;
-            upgradeButtons.enabled = true;
             leaveShop.enabled = true;
-            upgradeButtons_shadow.enabled = true;
             leaveShop_shadow.enabled = true;
 
         }
@@ -76,15 +81,20 @@ public class UI : MonoBehaviour
             {
                 Score();
             }
+            pADesc.enabled = false;
+            wWDesc.enabled = false;
+            hRDesc.enabled = false;
+            iSDesc.enabled = false;
+            sBDesc.enabled = false;
+            tBDesc.enabled = false;
             pickaxeUpShop.enabled = false;
             ironSkinShop.enabled = false;
             wineWindShop.enabled = false;
             highRollersShop.enabled = false;
             tailoredBootsShop.enabled = false;
             soapBandagesShop.enabled = false;
-            upgradeButtons.enabled = false;
+            
             leaveShop.enabled = false;
-            upgradeButtons_shadow.enabled = false;
             leaveShop_shadow.enabled = false;
 
         }
