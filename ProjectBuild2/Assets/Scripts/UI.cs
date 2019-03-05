@@ -15,6 +15,9 @@ public class UI : MonoBehaviour
     public Text leaveShop;
     public Text upgradeButtons_shadow;
     public Text leaveShop_shadow;
+    public Text score;
+    public Text scoreShadow;
+    public int scoreNum;
 
     private int timer = 0;
     // Start is called before the first frame update
@@ -51,9 +54,12 @@ public class UI : MonoBehaviour
             leaveShop_shadow.enabled = true;
 
         }
-        if(PlayerRun.isInShop == false)
+        if (PlayerRun.isInShop == false || PlayerRun.outOfGold || DeleteItem.currentHealth <= 0)
         {
-
+            if (!PlayerRun.outOfGold && DeleteItem.currentHealth > 0)
+            {
+                Score();
+            }      
             upgradeButtons.enabled = false;
             leaveShop.enabled = false;
             upgradeButtons_shadow.enabled = false;
@@ -82,14 +88,33 @@ public class UI : MonoBehaviour
     {
         if(DeleteItem.currentHealth <= 0 || PlayerRun.outOfGold)
         {
-            gameOver.text = "Game Over";
-            gameOver_shadow.text = "Game Over";
+            if (DeleteItem.currentHealth <= 0 && !PlayerRun.outOfGold)
+            {
+                gameOver.text = "Game Over\nYou Are Dead";
+                gameOver_shadow.text = "Game Over\nYou Are Dead";
+            }
+            else if (PlayerRun.outOfGold && DeleteItem.currentHealth > 0)
+            {
+                gameOver.text = "Game Over\nOut of Gold!";
+                gameOver_shadow.text = "Game Over\nOut of Gold!";
+            }
         }
         else
         {
             gameOver.text = "";
             gameOver_shadow.text = "";
         }
+    }
+
+    void Score()
+    {
+       // if (!PlayerRun.isInShop)
+       // {
+            scoreNum++;
+            score.text = "Score: " + scoreNum;
+            scoreShadow.text = "Score: " + scoreNum;
+
+        //}
     }
 
 

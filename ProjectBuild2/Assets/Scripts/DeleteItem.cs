@@ -30,6 +30,10 @@ public class DeleteItem : MonoBehaviour
         {
             mercyInvincibility = 0;
         }
+        if(PlayerRun.isInShop)
+        {
+            mercyInvincibility = 5f;
+        }
 
         if (refAABB.isDead)
         {
