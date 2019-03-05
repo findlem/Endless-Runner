@@ -240,8 +240,8 @@ public class PlayerRun : MonoBehaviour
         pos.z += speed * Time.deltaTime;
 
         //moving left and right
-        bool left = Input.GetKeyDown("left");
-        bool right = Input.GetKeyDown("right");
+        bool left = Input.GetKeyDown("a");
+        bool right = Input.GetKeyDown("d");
         //Nathan's movement code
         //instances where player cannot move
         /*if (left == true && currentLane == 1 && isChangingLanes == false)
