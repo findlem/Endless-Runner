@@ -17,11 +17,17 @@ public class UI : MonoBehaviour
     public Text score;
     public Text scoreShadow;
     public Text pADesc;
+    public Text pADescText;
     public Text wWDesc;
+    public Text wWDescText;
     public Text hRDesc;
+    public Text hRDescText;
     public Text iSDesc;
+    public Text iSDescText;
     public Text sBDesc;
+    public Text sBDescText;
     public Text tBDesc;
+    public Text tBDescText;
     public Image pickaxeUp;
     public Image pickaxeUpShop;
     public Image ironSkin;
@@ -60,11 +66,17 @@ public class UI : MonoBehaviour
         if (PlayerRun.isInShop == true)
         {
             pADesc.enabled = true;
+            pADescText.enabled = true;
             wWDesc.enabled = true;
+            wWDescText.enabled = true;
             hRDesc.enabled = true;
+            hRDescText.enabled = true;
             iSDesc.enabled = true;
+            iSDescText.enabled = true;
             sBDesc.enabled = true;
+            sBDescText.enabled = true;
             tBDesc.enabled = true;
+            tBDescText.enabled = true;
             pickaxeUpShop.enabled = true;
             ironSkinShop.enabled = true;
             wineWindShop.enabled = true;
@@ -82,11 +94,17 @@ public class UI : MonoBehaviour
                 Score();
             }
             pADesc.enabled = false;
+            pADescText.enabled = false;
             wWDesc.enabled = false;
+            wWDescText.enabled = false;
             hRDesc.enabled = false;
+            hRDescText.enabled = false;
             iSDesc.enabled = false;
+            iSDescText.enabled = false;
             sBDesc.enabled = false;
+            sBDescText.enabled = false;
             tBDesc.enabled = false;
+            tBDescText.enabled = false;
             pickaxeUpShop.enabled = false;
             ironSkinShop.enabled = false;
             wineWindShop.enabled = false;
