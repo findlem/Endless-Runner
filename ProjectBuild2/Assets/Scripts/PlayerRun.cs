@@ -33,7 +33,11 @@ public class PlayerRun : MonoBehaviour
     public static bool PowerUp2 = false;
     public static bool PupActive2 = false;
     public static bool tailoredBoots = false;
+    public static bool highRollersRum = false;
+    public static bool highRollersRumActive = false;
+    public static int highRollerTimer = 0;
     private int PUp2Timer = 0;
+    public float maxGold = 10;
 
     public static float score = 0f; //player earns points over time
     private float scoreDelay = 0.5f; //delay between points earned
@@ -128,6 +132,11 @@ public class PlayerRun : MonoBehaviour
             {
                 PowerUp2 = true;
             }
+            if (Input.GetKeyDown("l") && highRollersRumActive == true)
+            {
+                highRollersRum = true;
+                
+            }
 
         } else
         {
@@ -162,9 +171,10 @@ public class PlayerRun : MonoBehaviour
                 DeleteItem.currentHealth = 3;
                 encumbrance = encumbrance - 2;
             }
-            if (Input.GetKeyDown("l"))
+            if (Input.GetKeyDown("l") && encumbrance >= 3 && highRollersRumActive == false)
             {
-                //something
+                highRollersRumActive = true;
+                encumbrance = encumbrance - 3;
             }
             if (Input.GetKeyDown("j") && encumbrance >= 4)
             {
@@ -186,11 +196,23 @@ public class PlayerRun : MonoBehaviour
             PUp2Timer = 0;
             PupActive2 = false;
         }
+        if (highRollersRum)
+        {
+            highRollerTimer++;
+            maxGold = 20;
+        }
+        if(highRollerTimer >= 500)
+        {
+            highRollerTimer = 0;
+            highRollersRum = false;
+            highRollersRumActive = false;
+        }
+
 
         
-        if (encumbrance >= 10)
+        if (encumbrance >= maxGold)
         {
-            encumbrance = 10;
+            encumbrance = maxGold;
         }
         if (encumbrance < 0 || DeleteItem.currentHealth == 0) //results in a gameover anyways, but best not keep dropping below 0
         {
