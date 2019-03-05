@@ -17,6 +17,17 @@ public class UI : MonoBehaviour
     public Text leaveShop_shadow;
     public Text score;
     public Text scoreShadow;
+    public Image pickaxeUp;
+    public Image pickaxeUpShop;
+    public Image ironSkin;
+    public Image ironSkinShop;
+    public Image wineWind;
+    public Image wineWindShop;
+    public Image highRollers;
+    public Image highRollersShop;
+    public Image tailoredBoots;
+    public Image tailoredBootsShop;
+    public Image soapBandagesShop;
     public int scoreNum;
 
     private int timer = 0;
@@ -47,7 +58,12 @@ public class UI : MonoBehaviour
 
         if (PlayerRun.isInShop == true)
         {
-
+            pickaxeUpShop.enabled = true;
+            ironSkinShop.enabled = true;
+            wineWindShop.enabled = true;
+            highRollersShop.enabled = true;
+            tailoredBootsShop.enabled = true;
+            soapBandagesShop.enabled = true;
             upgradeButtons.enabled = true;
             leaveShop.enabled = true;
             upgradeButtons_shadow.enabled = true;
@@ -59,7 +75,13 @@ public class UI : MonoBehaviour
             if (!PlayerRun.outOfGold && DeleteItem.currentHealth > 0)
             {
                 Score();
-            }      
+            }
+            pickaxeUpShop.enabled = false;
+            ironSkinShop.enabled = false;
+            wineWindShop.enabled = false;
+            highRollersShop.enabled = false;
+            tailoredBootsShop.enabled = false;
+            soapBandagesShop.enabled = false;
             upgradeButtons.enabled = false;
             leaveShop.enabled = false;
             upgradeButtons_shadow.enabled = false;
@@ -67,7 +89,7 @@ public class UI : MonoBehaviour
 
         }
 
-
+        UpgradeImages();
     }
 
     void SetHealthText()
@@ -115,6 +137,54 @@ public class UI : MonoBehaviour
             scoreShadow.text = "Score: " + scoreNum;
 
         //}
+    }
+
+    void UpgradeImages()
+    {
+        if (PlayerRun.Active)
+        {
+            pickaxeUp.enabled = true;
+        } 
+        if (!PlayerRun.Active)
+        {
+            pickaxeUp.enabled = false;
+        }
+
+        if (PlayerRun.PupActive)
+        {
+            ironSkin.enabled = true;
+        }
+        if (!PlayerRun.PupActive)
+        {
+            ironSkin.enabled = false;
+        }
+
+        if (PlayerRun.PupActive2)
+        {
+            wineWind.enabled = true;
+        }
+        if (!PlayerRun.PupActive2)
+        {
+            wineWind.enabled = false;
+        }
+
+        if (PlayerRun.highRollersRumActive)
+        {
+            highRollers.enabled = true;
+        }
+        if (!PlayerRun.highRollersRumActive)
+        {
+            highRollers.enabled = false;
+        }
+
+        if (PlayerRun.tailoredBoots)
+        {
+            tailoredBoots.enabled = true;
+        }
+        if (!PlayerRun.tailoredBoots)
+        {
+            tailoredBoots.enabled = false;
+        }
     }
 
 
