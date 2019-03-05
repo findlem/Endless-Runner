@@ -8,11 +8,14 @@ public class UI : MonoBehaviour
     public Text health;
     public Text encumbrance;
     public Text gameOver;
+    public Text gameOver_shadow;
     public Slider healthBar;
     public Slider encumbranceBar;
     public Text upgradeButtons;
     public Text leaveShop;
-    
+    public Text upgradeButtons_shadow;
+    public Text leaveShop_shadow;
+
     private int timer = 0;
     // Start is called before the first frame update
     PlayerRun playerR = null;
@@ -23,6 +26,8 @@ public class UI : MonoBehaviour
         SetEncumbranceText();
         upgradeButtons.enabled = false;
         leaveShop.enabled = false;
+        upgradeButtons_shadow.enabled = false;
+        leaveShop_shadow.enabled = false;
     }
 
     // Update is called once per frame
@@ -42,6 +47,8 @@ public class UI : MonoBehaviour
 
             upgradeButtons.enabled = true;
             leaveShop.enabled = true;
+            upgradeButtons_shadow.enabled = true;
+            leaveShop_shadow.enabled = true;
 
         }
         if(PlayerRun.isInShop == false)
@@ -49,6 +56,8 @@ public class UI : MonoBehaviour
 
             upgradeButtons.enabled = false;
             leaveShop.enabled = false;
+            upgradeButtons_shadow.enabled = false;
+            leaveShop_shadow.enabled = false;
 
         }
 
@@ -74,10 +83,12 @@ public class UI : MonoBehaviour
         if(DeleteItem.currentHealth <= 0 || PlayerRun.outOfGold)
         {
             gameOver.text = "Game Over";
+            gameOver_shadow.text = "Game Over";
         }
         else
         {
             gameOver.text = "";
+            gameOver_shadow.text = "";
         }
     }
 

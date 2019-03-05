@@ -27,7 +27,7 @@ public class LavaFlow : MonoBehaviour
             speed = 6 + (PlayerRun.score / 100);
         } else
         {
-            speed = 0 - (PlayerRun.score / 100);
+            speed = 0;
         }
         
 

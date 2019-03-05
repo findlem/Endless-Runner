@@ -27,12 +27,15 @@ public class PlayerRun : MonoBehaviour
     public static bool outOfGold = false; //if this is ever ticked true, the dwarf will stop running and get burned
     public static bool isInShop = false;
     public static bool Active = false; // used to check for upgrades in other scripts
+    public bool pickaxeBought = false;
     public static bool PowerUp1 = false;
     public static bool PowerUp2 = false;
+    public static bool tailoredBoots = false;
     private int PUp2Timer = 0;
 
     public static float score = 0f; //player earns points over time
     private float scoreDelay = 0.5f; //delay between points earned
+    public static float shopScore = 0f; //tied to score; used for shop spawning
 
     //bool switch1 = false;
 
@@ -92,14 +95,16 @@ public class PlayerRun : MonoBehaviour
     void Update()
     {
         //calculate score; also used to determine LavaFlow.cs speed
-        if(outOfGold == false && DeleteItem.currentHealth > 0)
+        if(outOfGold == false && DeleteItem.currentHealth > 0 && isInShop == false)
         {
             scoreDelay -= 1f * Time.deltaTime;
             if (scoreDelay <= 0f)
             {
                 scoreDelay = 0.5f;
                 score += 1f;
-                print(score);
+                shopScore += 1f;
+                //print(score);
+                //print(shopScore);
             }
         }
 
@@ -107,11 +112,11 @@ public class PlayerRun : MonoBehaviour
 
         //NOTE: This gradually drains away your encumbrance; as in, you slowly lose gold!
         //had trouble letting other scripts change encumbrance, so now the rate of loss goes up as your health goes down
-        encumbrance -= ((1 * Time.deltaTime) / (DeleteItem.currentHealth + 1)); //adds 1 so it doesn't try to divide by 0
 
         if (!isInShop)
         {
             speed = 10; //reset speed first
+            encumbrance -= ((1 * Time.deltaTime) / (DeleteItem.currentHealth + 1)); //adds 1 so it doesn't try to divide by 0
 
         } else
         {
@@ -120,21 +125,41 @@ public class PlayerRun : MonoBehaviour
             {
                 isInShop = false;
             }
-            encumbrance = 5;
-            if (Input.GetKeyDown("p")) // Example used for upgrades for future reference
+            //encumbrance = 5;
+            if (Input.GetKeyDown("p") && encumbrance >= 6 && pickaxeBought == false) // Example used for upgrades for future reference
             {
                 Active = true;
+                encumbrance = encumbrance - 6;
+                pickaxeBought = true;
             }
 
-            if (Input.GetKeyDown("o")) // Example used for powerups for future reference
+            if (Input.GetKeyDown("o") && encumbrance >= 4) // Example used for powerups for future reference
             {
                PowerUp1 = true;
+               encumbrance = encumbrance - 4;
             }
 
-            if (Input.GetKeyDown("u"))
+            if (Input.GetKeyDown("u") && encumbrance >= 4)
             {
                 PowerUp2 = true;
+                encumbrance = encumbrance - 4;
             }
+            if (Input.GetKeyDown("k") && encumbrance >= 2 && DeleteItem.currentHealth < 3)
+            {
+                DeleteItem.currentHealth = 3;
+                encumbrance = encumbrance - 2;
+            }
+            if (Input.GetKeyDown("l"))
+            {
+                //something
+            }
+            if (Input.GetKeyDown("j") && encumbrance >= 4)
+            {
+                tailoredBoots = true;
+                encumbrance = encumbrance - 4;
+
+            }
+            
         }
 
         if(PowerUp2 == true && !isInShop) // This Triggers The Speed Power Up 
@@ -319,7 +344,7 @@ public class PlayerRun : MonoBehaviour
                     print("BIG WOO");
                 }
             }
-            print("Speed = " + speed + "; Encumbrance = " + encumbrance + "; Current Health = " + DeleteItem.currentHealth);
+            //print("Speed = " + speed + "; Encumbrance = " + encumbrance + "; Current Health = " + DeleteItem.currentHealth);
         }
 
         if(other.gameObject.tag == "lava")
